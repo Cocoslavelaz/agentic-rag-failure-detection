@@ -12,6 +12,8 @@ from src.utils import GraphState
 from src.utils import RetrieveTopChunk
 from agents.plan_executor import build_plan_executor
 from agents.plan import plan_agent
+from src.backend import LLMConfig
+from src.telemetry import trajectory_context
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -58,7 +60,8 @@ if __name__ == "__main__":
     dataset = load_dataset(name=dataset_name)
     
     c = 0
-    save_dir = f"{exp_name}_{model}_{dataset_name}"
+    llm_config = LLMConfig.from_env()
+    save_dir = f"{exp_name}_{model}_{dataset_name}_{llm_config.configuration_id}"
     os.makedirs(save_dir, exist_ok=True)
     for id, item in enumerate(dataset):
         if id < args.start_index or id > args.end_index:
@@ -76,7 +79,10 @@ if __name__ == "__main__":
             "original_question": f"{question}?"
         }
         try:
-            output = graph.invoke(inputs)
+            with trajectory_context(question_id, llm_config, dataset_id=dataset_name) as trace:
+                output = graph.invoke(inputs)
+                if trace:
+                    trace.data["final_agent_output"] = output
             print(output)
             print()
 

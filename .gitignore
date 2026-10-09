@@ -1,4 +1,9 @@
 .venv/
+.venv311/
+.uv-cache/
+.pytest_cache/
+pytest-cache-files-*/
+outputs/
 .vscode/
 .env
 .DS_Store

@@ -1,4 +1,3 @@
-import ir_datasets
 import pandas as pd
 import torch
 import json
@@ -6,14 +5,14 @@ import torch.nn.functional as F
 import argparse
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from langchain_core.prompts.chat import ChatPromptTemplate, HumanMessagePromptTemplate, MessagesPlaceholder, SystemMessagePromptTemplate
-from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from typing import NamedTuple
-from ir_datasets.util import DownloadConfig, home_path, Cache, ZipExtract, GzipExtract, LocalDownload
-from ir_datasets.formats import TsvDocs, TsvQueries, TrecQrels
 from typing import Annotated, Sequence, Literal, Sequence, Optional
 from typing_extensions import TypedDict, List
 from pydantic import BaseModel, Field
+from typing_extensions import NotRequired
+from src.telemetry import ACTIVE_TRACE
+from src.uncertainty import retrieval_features
 import operator
 
 def load_dataset(name, split):
@@ -21,6 +20,7 @@ def load_dataset(name, split):
     Load queries and corpus.
     This function only supports ir_datasets
     """
+    import ir_datasets
     nq_dataset = ir_datasets.load(f"{name}/{split}")
     df = pd.DataFrame(nq_dataset.queries_iter())
     nq_q_dict = {k: {"q": q, "a": a} for k, q, a in zip(df['query_id'].to_list(), df['text'].to_list(), df['answers'].to_list())}
@@ -66,6 +66,20 @@ class RetrieveTopChunk():
             tmp = self.corpus.get(doc_id)
             list_docs.append(tmp.text)
             list_doc_ids.append(tmp.doc_id)
+
+        trace = ACTIVE_TRACE.get()
+        if trace:
+            search = getattr(self.retrieval_model, "last_search", None) or {}
+            scores = [float(score) for score in top_doc[0].values()]
+            verified = search.get("document_norms_verified") is True and search.get("query_norms_verified") is True
+            hits = search.get("faiss_hits", [[]])[0]
+            if any(not h["valid_index_position"] for h in hits):
+                verified = False
+            trace.retrieval({"query": query, "top_k_requested": self.top_k,
+                             "top_k_returned": len(list_doc_ids), "ordered_document_ids": [str(i) for i in list_doc_ids],
+                             "raw_faiss_scores": scores, "cosine_similarities": scores if verified else None,
+                             "embedding_model": getattr(getattr(self.embedding_model, "config", None), "_name_or_path", "unknown"),
+                             **search, **retrieval_features(scores, cosine_verified=verified)})
 
         return list_docs, list_doc_ids
 
@@ -155,6 +169,9 @@ class GenericDoc(NamedTuple):
         return self.a
 
 def load_corpus(name="dpr"):
+    import ir_datasets
+    from ir_datasets.util import GzipExtract, LocalDownload
+    from ir_datasets.formats import TsvDocs
     if name == "dpr":
         nq_dataset = ir_datasets.load("dpr-w100/natural-questions/dev")
         # df = pd.DataFrame(nq_dataset.queries_iter())
@@ -175,8 +192,11 @@ class QAAnswerFormat(BaseModel):
 class QAAnswerState(TypedDict):
     analysis: str
     answer: str
-    success: str
+    success: str | bool | int
     rating: int
+    success_raw: NotRequired[str | bool | int]
+    success_normalized: NotRequired[str]
+    success_normalization_status: NotRequired[str]
 
 class PlanFormat(BaseModel):
     analysis: str = Field(description= "Your analysis. Think step-by-step")

@@ -7,7 +7,8 @@ from src.prompt_template import extract_system_messgage, extract_human_message, 
 from src.prompt_template import qa_human_message, qa_input_variables, qa_system_message
 from src.prompt_template import aggregate_human_message, aggregate_input_variables, aggregate_system_message
 from langchain_core.prompts.chat import ChatPromptTemplate, HumanMessagePromptTemplate, SystemMessagePromptTemplate
-from langchain_openai import ChatOpenAI
+from src.invocation import invoke_component
+from src.telemetry import step_context
 from langchain_core.output_parsers import StrOutputParser
 from langgraph.graph import MessagesState, StateGraph, START, END
 
@@ -16,7 +17,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def build_plan_executor(retriever_tool = None):
-    API_KEY = os.getenv("API_KEY")
 
 
     rag_agent = build_rag_agent(retriever_tool=retriever_tool)
@@ -30,14 +30,11 @@ def build_plan_executor(retriever_tool = None):
                 HumanMessagePromptTemplate.from_template(aggregate_human_message),
             ]
             prompt = ChatPromptTemplate(input_variables=aggregate_input_variables, messages=messages)
-            llm = ChatOpenAI(model_name=os.getenv("MODEL_NAME"), temperature=0.0, api_key=API_KEY,  max_retries=5)
-            structured_llm = llm.with_structured_output(QAAnswerFormat)
-            chain = prompt | structured_llm
             full_prompt = prompt.format(
                 question=query,
             )
-            response = chain.invoke({"question": query})
-            response = QAAnswerState(**response.model_dump())
+            response = invoke_component("aggregate", prompt, {"question": query}, QAAnswerFormat)
+            response = QAAnswerState(**response)
             step_doc_ids = []
             step_notes = []
         else:
@@ -59,7 +56,12 @@ def build_plan_executor(retriever_tool = None):
     graph_builder = StateGraph(PlanExecState)
     
     graph_builder.add_node("task_definer", task_define)
-    graph_builder.add_node("single_task_execute", single_task_execute)
+    def traced_task_execute(state: PlanExecState):
+        route = "aggregate" if state["step_question"][-1]["type"] == "aggregate" else "rag"
+        with step_context(f"step:{len(state['step_output'])}", route):
+            return single_task_execute(state)
+
+    graph_builder.add_node("single_task_execute", traced_task_execute)
     graph_builder.add_edge(START, "task_definer")
     graph_builder.add_edge("single_task_execute", "task_definer")
     graph_builder.add_conditional_edges("task_definer", task_definer_out)

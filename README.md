@@ -1,5 +1,13 @@
 # MA-RAG: Multi-Agent Retrieval-Augmented Generation via Collaborative Chain-of-Thought Reasoning
 
+Local Qwen3 research implementation (Phase 0 + Phase 1): see
+[architecture audit](docs/phase0_audit.md),
+[Windows setup and compatibility findings](docs/qwen3_migration.md),
+[success serialization audit](docs/success_serialization_audit.md), and
+[trajectory instrumentation](docs/phase1_instrumentation.md).
+The original instructions below describe the upstream OpenAI/Linux configuration;
+the new local baseline is configured through `.env.sample`.
+
 This repository contains the source code for the paper:  
 [MA-RAG: Multi-Agent Retrieval-Augmented Generation via Collaborative Chain-of-Thought Reasoning](https://arxiv.org/abs/2505.20096).
 

@@ -1,0 +1,771 @@
+{
+  "schema_version": "ma_rag_trajectory_v1",
+  "run_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e",
+  "question_id": "synthetic-question",
+  "dataset_id": "synthetic_only",
+  "timestamp": "2026-10-09T16:16:42.828504+00:00",
+  "status": "completed",
+  "error": null,
+  "metadata": {
+    "synthetic": true,
+    "model_calls": "mocked",
+    "real_model_output": false,
+    "retriever": {
+      "embedding_model": "synthetic_unit_vectors",
+      "index_version": "synthetic_fixture"
+    }
+  },
+  "invocations": [
+    {
+      "run_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e",
+      "question_id": "synthetic-question",
+      "invocation_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e:call:0",
+      "component": "planner",
+      "step_id": null,
+      "document_id": null,
+      "retrieval_rank": null,
+      "route": "plan",
+      "model_id": "qwen3:8b",
+      "temperature": 0.3,
+      "thinking_mode": false,
+      "prompt_hash": "ff7227256577d7a4a4f72276fb854cdd0b25ff855283a6c122cf811d06434d44",
+      "input": {
+        "question": "What is 1+1?",
+        "memory": "empty"
+      },
+      "raw_output": {
+        "content": "{\"analysis\": \"synthetic\", \"step\": [\"Find a value\", \"Combine the result\"]}",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "eval_count": 2,
+          "prompt_eval_count": 12,
+          "logprobs": [
+            {
+              "token": "synthetic-token-1",
+              "logprob": -0.2
+            },
+            {
+              "token": "synthetic-token-2",
+              "logprob": -0.4
+            }
+          ]
+        },
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "example": false,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      },
+      "parsed_output": {
+        "analysis": "synthetic",
+        "step": [
+          "Find a value",
+          "Combine the result"
+        ]
+      },
+      "token_usage": {
+        "prompt_eval_count": 12,
+        "eval_count": 2
+      },
+      "token_logprobs": [
+        {
+          "token": "synthetic-token-1",
+          "logprob": -0.2
+        },
+        {
+          "token": "synthetic-token-2",
+          "logprob": -0.4
+        }
+      ],
+      "logprobs_status": "available",
+      "nll": {
+        "status": "available",
+        "scope": "full_response",
+        "nll_sum": 0.6000000000000001,
+        "nll_mean": 0.30000000000000004,
+        "nll_max": 0.4,
+        "nll_std": 0.1,
+        "token_count": 2,
+        "reported_output_token_count": 2,
+        "token_count_matches_usage": true
+      },
+      "latency_ms": 1.0271999926771969,
+      "status": "completed",
+      "error": null,
+      "started_at": "2026-10-09T16:16:42.834703+00:00",
+      "finished_at": "2026-10-09T16:16:42.835703+00:00"
+    },
+    {
+      "run_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e",
+      "question_id": "synthetic-question",
+      "invocation_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e:call:1",
+      "component": "step_definer",
+      "step_id": "step:0",
+      "document_id": null,
+      "retrieval_rank": null,
+      "route": "define",
+      "model_id": "qwen3:8b",
+      "temperature": 0.3,
+      "thinking_mode": false,
+      "prompt_hash": "23e5b2cb65cc2ab8a8bf103131c2e8c3d373eb2f720718a33d3b11c030759294",
+      "input": {
+        "plan": "[Find a value, Combine the result]",
+        "cur_step": "Find a value",
+        "memory": ""
+      },
+      "raw_output": {
+        "content": "{\"type\": \"question-answering\", \"task\": \"What is 1+1?\"}",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "eval_count": 2,
+          "prompt_eval_count": 12,
+          "logprobs": [
+            {
+              "token": "synthetic-token-1",
+              "logprob": -0.2
+            },
+            {
+              "token": "synthetic-token-2",
+              "logprob": -0.4
+            }
+          ]
+        },
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "example": false,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      },
+      "parsed_output": {
+        "type": "question-answering",
+        "task": "What is 1+1?"
+      },
+      "token_usage": {
+        "prompt_eval_count": 12,
+        "eval_count": 2
+      },
+      "token_logprobs": [
+        {
+          "token": "synthetic-token-1",
+          "logprob": -0.2
+        },
+        {
+          "token": "synthetic-token-2",
+          "logprob": -0.4
+        }
+      ],
+      "logprobs_status": "available",
+      "nll": {
+        "status": "available",
+        "scope": "full_response",
+        "nll_sum": 0.6000000000000001,
+        "nll_mean": 0.30000000000000004,
+        "nll_max": 0.4,
+        "nll_std": 0.1,
+        "token_count": 2,
+        "reported_output_token_count": 2,
+        "token_count_matches_usage": true
+      },
+      "latency_ms": 0.30220000189729035,
+      "status": "completed",
+      "error": null,
+      "started_at": "2026-10-09T16:16:42.843213+00:00",
+      "finished_at": "2026-10-09T16:16:42.844217+00:00"
+    },
+    {
+      "run_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e",
+      "question_id": "synthetic-question",
+      "invocation_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e:call:2",
+      "component": "extractor",
+      "step_id": "step:0",
+      "document_id": "doc-a",
+      "retrieval_rank": 1,
+      "route": "rag",
+      "model_id": "qwen3:8b",
+      "temperature": 0.0,
+      "thinking_mode": false,
+      "prompt_hash": "3fbf39449c10c54c6f2f8f85dfbd7d14f38da04e4d41f5d49c1fc2179e84357f",
+      "input": {
+        "passage": "One plus one is two.",
+        "question": "What is 1+1?"
+      },
+      "raw_output": {
+        "content": "Document one says 2.",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "eval_count": 2,
+          "prompt_eval_count": 12,
+          "logprobs": [
+            {
+              "token": "synthetic-token-1",
+              "logprob": -0.2
+            },
+            {
+              "token": "synthetic-token-2",
+              "logprob": -0.4
+            }
+          ]
+        },
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "example": false,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      },
+      "parsed_output": "Document one says 2.",
+      "token_usage": {
+        "prompt_eval_count": 12,
+        "eval_count": 2
+      },
+      "token_logprobs": [
+        {
+          "token": "synthetic-token-1",
+          "logprob": -0.2
+        },
+        {
+          "token": "synthetic-token-2",
+          "logprob": -0.4
+        }
+      ],
+      "logprobs_status": "available",
+      "nll": {
+        "status": "available",
+        "scope": "full_response",
+        "nll_sum": 0.6000000000000001,
+        "nll_mean": 0.30000000000000004,
+        "nll_max": 0.4,
+        "nll_std": 0.1,
+        "token_count": 2,
+        "reported_output_token_count": 2,
+        "token_count_matches_usage": true
+      },
+      "latency_ms": 0.09640000644139946,
+      "status": "completed",
+      "error": null,
+      "started_at": "2026-10-09T16:16:42.848217+00:00",
+      "finished_at": "2026-10-09T16:16:42.849217+00:00"
+    },
+    {
+      "run_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e",
+      "question_id": "synthetic-question",
+      "invocation_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e:call:3",
+      "component": "extractor",
+      "step_id": "step:0",
+      "document_id": "doc-b",
+      "retrieval_rank": 2,
+      "route": "rag",
+      "model_id": "qwen3:8b",
+      "temperature": 0.0,
+      "thinking_mode": false,
+      "prompt_hash": "05c08e8e1c28bef88a558949fe2a614c4845c64fd4ae32b54e71418533926372",
+      "input": {
+        "passage": "The sum of 1 and 1 is 2.",
+        "question": "What is 1+1?"
+      },
+      "raw_output": {
+        "content": "Document two says 2.",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "eval_count": 2,
+          "prompt_eval_count": 12,
+          "logprobs": [
+            {
+              "token": "synthetic-token-1",
+              "logprob": -0.2
+            },
+            {
+              "token": "synthetic-token-2",
+              "logprob": -0.4
+            }
+          ]
+        },
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "example": false,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      },
+      "parsed_output": "Document two says 2.",
+      "token_usage": {
+        "prompt_eval_count": 12,
+        "eval_count": 2
+      },
+      "token_logprobs": [
+        {
+          "token": "synthetic-token-1",
+          "logprob": -0.2
+        },
+        {
+          "token": "synthetic-token-2",
+          "logprob": -0.4
+        }
+      ],
+      "logprobs_status": "available",
+      "nll": {
+        "status": "available",
+        "scope": "full_response",
+        "nll_sum": 0.6000000000000001,
+        "nll_mean": 0.30000000000000004,
+        "nll_max": 0.4,
+        "nll_std": 0.1,
+        "token_count": 2,
+        "reported_output_token_count": 2,
+        "token_count_matches_usage": true
+      },
+      "latency_ms": 0.08450000314041972,
+      "status": "completed",
+      "error": null,
+      "started_at": "2026-10-09T16:16:42.850218+00:00",
+      "finished_at": "2026-10-09T16:16:42.851721+00:00"
+    },
+    {
+      "run_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e",
+      "question_id": "synthetic-question",
+      "invocation_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e:call:4",
+      "component": "qa",
+      "step_id": "step:0",
+      "document_id": null,
+      "retrieval_rank": null,
+      "route": "rag",
+      "model_id": "qwen3:8b",
+      "temperature": 0.3,
+      "thinking_mode": false,
+      "prompt_hash": "6d4ea0f9dccf0e4d181c2f93c7af9a111a53173d7a1ed27c169edf27a363028d",
+      "input": {
+        "context": "doc_doc-a: [Document one says 2.]\n\ndoc_doc-b: [Document two says 2.]",
+        "question": "What is 1+1?"
+      },
+      "raw_output": {
+        "content": "{\"analysis\": \"Synthetic analysis\", \"answer\": \"2\", \"success\": \"Yes\", \"rating\": 8}",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "eval_count": 2,
+          "prompt_eval_count": 12,
+          "logprobs": [
+            {
+              "token": "synthetic-token-1",
+              "logprob": -0.2
+            },
+            {
+              "token": "synthetic-token-2",
+              "logprob": -0.4
+            }
+          ]
+        },
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "example": false,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      },
+      "parsed_output": {
+        "analysis": "Synthetic analysis",
+        "answer": "2",
+        "success": "Yes",
+        "rating": 8,
+        "success_raw": "Yes",
+        "success_normalized": "yes",
+        "success_normalization_status": "mapped"
+      },
+      "token_usage": {
+        "prompt_eval_count": 12,
+        "eval_count": 2
+      },
+      "token_logprobs": [
+        {
+          "token": "synthetic-token-1",
+          "logprob": -0.2
+        },
+        {
+          "token": "synthetic-token-2",
+          "logprob": -0.4
+        }
+      ],
+      "logprobs_status": "available",
+      "nll": {
+        "status": "available",
+        "scope": "full_response",
+        "nll_sum": 0.6000000000000001,
+        "nll_mean": 0.30000000000000004,
+        "nll_max": 0.4,
+        "nll_std": 0.1,
+        "token_count": 2,
+        "reported_output_token_count": 2,
+        "token_count_matches_usage": true
+      },
+      "latency_ms": 0.3813000221271068,
+      "status": "completed",
+      "error": null,
+      "started_at": "2026-10-09T16:16:42.852725+00:00",
+      "success_raw": "Yes",
+      "success_normalized": "yes",
+      "success_normalization_status": "mapped",
+      "finished_at": "2026-10-09T16:16:42.854726+00:00"
+    },
+    {
+      "run_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e",
+      "question_id": "synthetic-question",
+      "invocation_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e:call:5",
+      "component": "step_definer",
+      "step_id": "step:1",
+      "document_id": null,
+      "retrieval_rank": null,
+      "route": "define",
+      "model_id": "qwen3:8b",
+      "temperature": 0.3,
+      "thinking_mode": false,
+      "prompt_hash": "213dbfe1041729430d9f316d39035797239ad6117111a4b3ad9184ad59c8a984",
+      "input": {
+        "plan": "[Find a value, Combine the result]",
+        "cur_step": "Combine the result",
+        "memory": "Task: Find a value\nAnswer: 2\n\n"
+      },
+      "raw_output": {
+        "content": "{\"type\": \"aggregate\", \"task\": \"The previous result is 2. Return 2.\"}",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "eval_count": 2,
+          "prompt_eval_count": 12,
+          "logprobs": [
+            {
+              "token": "synthetic-token-1",
+              "logprob": -0.2
+            },
+            {
+              "token": "synthetic-token-2",
+              "logprob": -0.4
+            }
+          ]
+        },
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "example": false,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      },
+      "parsed_output": {
+        "type": "aggregate",
+        "task": "The previous result is 2. Return 2."
+      },
+      "token_usage": {
+        "prompt_eval_count": 12,
+        "eval_count": 2
+      },
+      "token_logprobs": [
+        {
+          "token": "synthetic-token-1",
+          "logprob": -0.2
+        },
+        {
+          "token": "synthetic-token-2",
+          "logprob": -0.4
+        }
+      ],
+      "logprobs_status": "available",
+      "nll": {
+        "status": "available",
+        "scope": "full_response",
+        "nll_sum": 0.6000000000000001,
+        "nll_mean": 0.30000000000000004,
+        "nll_max": 0.4,
+        "nll_std": 0.1,
+        "token_count": 2,
+        "reported_output_token_count": 2,
+        "token_count_matches_usage": true
+      },
+      "latency_ms": 0.26780000189319253,
+      "status": "completed",
+      "error": null,
+      "started_at": "2026-10-09T16:16:42.856725+00:00",
+      "finished_at": "2026-10-09T16:16:42.858726+00:00"
+    },
+    {
+      "run_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e",
+      "question_id": "synthetic-question",
+      "invocation_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e:call:6",
+      "component": "aggregate",
+      "step_id": "step:1",
+      "document_id": null,
+      "retrieval_rank": null,
+      "route": "aggregate",
+      "model_id": "qwen3:8b",
+      "temperature": 0.0,
+      "thinking_mode": false,
+      "prompt_hash": "a642fe21386e53af251516cd1a9917ac195f92602032541c863d57efc5574814",
+      "input": {
+        "question": "The previous result is 2. Return 2."
+      },
+      "raw_output": {
+        "content": "{\"analysis\": \"Synthetic analysis\", \"answer\": \"2\", \"success\": \"True\", \"rating\": 8}",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "eval_count": 2,
+          "prompt_eval_count": 12,
+          "logprobs": [
+            {
+              "token": "synthetic-token-1",
+              "logprob": -0.2
+            },
+            {
+              "token": "synthetic-token-2",
+              "logprob": -0.4
+            }
+          ]
+        },
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "example": false,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      },
+      "parsed_output": {
+        "analysis": "Synthetic analysis",
+        "answer": "2",
+        "success": "True",
+        "rating": 8,
+        "success_raw": "True",
+        "success_normalized": "yes",
+        "success_normalization_status": "mapped"
+      },
+      "token_usage": {
+        "prompt_eval_count": 12,
+        "eval_count": 2
+      },
+      "token_logprobs": [
+        {
+          "token": "synthetic-token-1",
+          "logprob": -0.2
+        },
+        {
+          "token": "synthetic-token-2",
+          "logprob": -0.4
+        }
+      ],
+      "logprobs_status": "available",
+      "nll": {
+        "status": "available",
+        "scope": "full_response",
+        "nll_sum": 0.6000000000000001,
+        "nll_mean": 0.30000000000000004,
+        "nll_max": 0.4,
+        "nll_std": 0.1,
+        "token_count": 2,
+        "reported_output_token_count": 2,
+        "token_count_matches_usage": true
+      },
+      "latency_ms": 0.3695000195875764,
+      "status": "completed",
+      "error": null,
+      "started_at": "2026-10-09T16:16:42.860725+00:00",
+      "success_raw": "True",
+      "success_normalized": "yes",
+      "success_normalization_status": "mapped",
+      "finished_at": "2026-10-09T16:16:42.863233+00:00"
+    },
+    {
+      "run_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e",
+      "question_id": "synthetic-question",
+      "invocation_id": "f4ad5217-796c-4e72-9f0a-740e14a54c1e:call:7",
+      "component": "summary",
+      "step_id": null,
+      "document_id": null,
+      "retrieval_rank": null,
+      "route": "summary",
+      "model_id": "qwen3:8b",
+      "temperature": 0.0,
+      "thinking_mode": false,
+      "prompt_hash": "bcfaff841911c227cfc7d1f489904592eb80cff7fd84fec31a597eed43fef6db",
+      "input": {
+        "question": "What is 1+1?",
+        "plan": "[Find a value, Combine the result]",
+        "memory": "Task: Find a value\nQuestion: What is 1+1?\nAnswer: 2\nConfident score: 8\n\nTask: Combine the result\nQuestion: The previous result is 2. Return 2.\nAnswer: 2\nConfident score: 8\n\n"
+      },
+      "raw_output": {
+        "content": "{\"output\": \"Successful\", \"answer\": \"2\", \"score\": 8}",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "eval_count": 2,
+          "prompt_eval_count": 12,
+          "logprobs": [
+            {
+              "token": "synthetic-token-1",
+              "logprob": -0.2
+            },
+            {
+              "token": "synthetic-token-2",
+              "logprob": -0.4
+            }
+          ]
+        },
+        "type": "ai",
+        "name": null,
+        "id": null,
+        "example": false,
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": null
+      },
+      "parsed_output": {
+        "output": "Successful",
+        "answer": "2",
+        "score": 8
+      },
+      "token_usage": {
+        "prompt_eval_count": 12,
+        "eval_count": 2
+      },
+      "token_logprobs": [
+        {
+          "token": "synthetic-token-1",
+          "logprob": -0.2
+        },
+        {
+          "token": "synthetic-token-2",
+          "logprob": -0.4
+        }
+      ],
+      "logprobs_status": "available",
+      "nll": {
+        "status": "available",
+        "scope": "full_response",
+        "nll_sum": 0.6000000000000001,
+        "nll_mean": 0.30000000000000004,
+        "nll_max": 0.4,
+        "nll_std": 0.1,
+        "token_count": 2,
+        "reported_output_token_count": 2,
+        "token_count_matches_usage": true
+      },
+      "latency_ms": 0.27340001543052495,
+      "status": "completed",
+      "error": null,
+      "started_at": "2026-10-09T16:16:42.866234+00:00",
+      "finished_at": "2026-10-09T16:16:42.867233+00:00"
+    }
+  ],
+  "retrievals": [
+    {
+      "step_id": "step:0",
+      "route": "rag",
+      "synthetic": true,
+      "query": "What is 1+1?",
+      "top_k_requested": 2,
+      "top_k_returned": 2,
+      "ordered_document_ids": [
+        "doc-a",
+        "doc-b"
+      ],
+      "raw_faiss_scores": [
+        0.9,
+        0.8
+      ],
+      "cosine_similarities": [
+        0.9,
+        0.8
+      ],
+      "index_version": "synthetic_fixture",
+      "embedding_model": "synthetic_unit_vectors",
+      "top1_uncertainty": 0.09999999999999998,
+      "topk_mean_uncertainty": 0.1499999999999999,
+      "score_margin": 0.09999999999999998,
+      "similarity_validity_status": "cosine_verified",
+      "latency_ms": 0.8696999866515398,
+      "status": "completed",
+      "error": null
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "step:0",
+      "route": "rag",
+      "status": "completed",
+      "execution_masks": {
+        "retriever": true,
+        "extractor": true,
+        "qa": true,
+        "aggregate": false
+      }
+    },
+    {
+      "step_id": "step:1",
+      "route": "aggregate",
+      "status": "completed",
+      "execution_masks": {
+        "retriever": false,
+        "extractor": false,
+        "qa": false,
+        "aggregate": true
+      }
+    }
+  ],
+  "final_agent_output": {
+    "original_question": "What is 1+1?",
+    "plan": [
+      "Find a value",
+      "Combine the result"
+    ],
+    "step_question": [
+      {
+        "type": "question-answering",
+        "task": "What is 1+1?"
+      },
+      {
+        "type": "aggregate",
+        "task": "The previous result is 2. Return 2."
+      }
+    ],
+    "step_output": [
+      {
+        "analysis": "Synthetic analysis",
+        "answer": "2",
+        "success": "Yes",
+        "rating": 8,
+        "success_raw": "Yes",
+        "success_normalized": "yes",
+        "success_normalization_status": "mapped"
+      },
+      {
+        "analysis": "Synthetic analysis",
+        "answer": "2",
+        "success": "True",
+        "rating": 8,
+        "success_raw": "True",
+        "success_normalized": "yes",
+        "success_normalization_status": "mapped"
+      }
+    ],
+    "step_docs_ids": [
+      [
+        "doc-a",
+        "doc-b"
+      ]
+    ],
+    "step_notes": [
+      [
+        "[Document one says 2.]",
+        "[Document two says 2.]"
+      ]
+    ],
+    "plan_summary": {
+      "output": "Successful",
+      "answer": "2",
+      "score": 8
+    },
+    "stop": true
+  },
+  "finished_at": "2026-10-09T16:16:42.869234+00:00"
+}
