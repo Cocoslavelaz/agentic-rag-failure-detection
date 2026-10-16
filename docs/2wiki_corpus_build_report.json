@@ -1,0 +1,169 @@
+{
+  "dry_run": {
+    "mode": "dry-run",
+    "prepared_database": "D:\\school\\研究所\\碩論\\paper_codes\\MA-RAG\\outputs\\phase2\\dryrun_primary\\prepared.sqlite",
+    "prepared_database_sha256": "936bf6ff2cd3af2d79e0dc3af95aeed0d224006156c587437c23d9673f8b9af4",
+    "manifest_preview": {
+      "schema_version": 1,
+      "builder_version": "2wiki-pooled-v1",
+      "dataset": "2wikimultihopqa",
+      "dataset_source_url": "https://www.dropbox.com/s/ms2m13252h6xubs/data_ids_april7.zip?dl=1",
+      "dataset_revision": "2021-04-07 sentence segmentation corrected release",
+      "dataset_sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+      "included_splits": [
+        "train",
+        "dev"
+      ],
+      "corpus_policy": "train_plus_validation",
+      "benchmark": "pooled-context adaptation; dev contexts included only under train_plus_validation",
+      "passage_granularity": "one original context entry; no chunking",
+      "embedding_text_rule": "original title + LF + space.join(original ordered sentences)",
+      "canonicalization": "NFC then Unicode whitespace split/join independently on complete title and joined passage; canonical JSON [title,text]",
+      "document_id_algorithm": "2wiki-v1: + SHA256(UTF8 canonical JSON [title,text]); compare canonical bytes on hash match, abort collisions",
+      "raw_variant_algorithm": "variant-v1: + SHA256(UTF8 canonical JSON [original title,original sentence list])",
+      "representative_rule": "first occurrence in fixed train/dev order, original row order and context position; variants preserve every alternative",
+      "serialization": "UTF-8, ensure_ascii=false, sorted keys, compact separators, LF; documents/variants sorted by ID; refs by doc_id,split,question_id,position",
+      "data_quality_policy": "all context entries included regardless of QA/evidence flags; no gold/support-based selection",
+      "total_context_entries": 1800300,
+      "unique_passages": 384857,
+      "duplicate_count": 1415443,
+      "unique_raw_variants": 384857,
+      "split_statistics": {
+        "train": {
+          "questions": 167454,
+          "qa_valid_questions": 167454,
+          "evidence_invalid_questions": 1990,
+          "context_entries": 1674540,
+          "evidence_invalid_context_entries_included": 19900
+        },
+        "dev": {
+          "questions": 12576,
+          "qa_valid_questions": 12576,
+          "evidence_invalid_questions": 70,
+          "context_entries": 125760,
+          "evidence_invalid_context_entries_included": 700
+        }
+      },
+      "cross_split_overlap": {
+        "unique_passages_per_split": {
+          "train": 369378,
+          "dev": 54957
+        },
+        "shared_unique_passages": 39478,
+        "source_entries_on_shared_passages": 1128558,
+        "definition": "shared = canonical documents appearing in >1 included split; entry count includes all occurrences"
+      }
+    },
+    "estimated_output_bytes_by_file": {
+      "documents.jsonl": 612744577,
+      "source_variants.jsonl": 575413448,
+      "source_mappings.jsonl": 784436330,
+      "provenance.json": 903
+    },
+    "estimated_output_bytes_excluding_manifest": 1972595258,
+    "available_disk_bytes_before": 461741916160,
+    "available_disk_bytes_after": 458312769536,
+    "sqlite_bytes": 3429130240,
+    "observed_peak_process_ram_bytes": 103157760,
+    "estimated_peak_ram_bytes": 268435456,
+    "dry_run_seconds": 117.78577429999132,
+    "estimated_export_seconds_at_20_MiB_s": 94.06067171096802,
+    "runtime_estimate_note": "Export estimate assumes 20 MiB/s sequential throughput; sorted SQLite scan overhead and antivirus may add time."
+  },
+  "build": {
+    "output_directory": "D:\\school\\研究所\\碩論\\paper_codes\\MA-RAG\\artifacts\\2wiki\\2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+    "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+    "manifest": {
+      "benchmark": "pooled-context adaptation; dev contexts included only under train_plus_validation",
+      "builder_version": "2wiki-pooled-v1",
+      "canonicalization": "NFC then Unicode whitespace split/join independently on complete title and joined passage; canonical JSON [title,text]",
+      "corpus_policy": "train_plus_validation",
+      "cross_split_overlap": {
+        "definition": "shared = canonical documents appearing in >1 included split; entry count includes all occurrences",
+        "shared_unique_passages": 39478,
+        "source_entries_on_shared_passages": 1128558,
+        "unique_passages_per_split": {
+          "dev": 54957,
+          "train": 369378
+        }
+      },
+      "data_quality_policy": "all context entries included regardless of QA/evidence flags; no gold/support-based selection",
+      "dataset": "2wikimultihopqa",
+      "dataset_revision": "2021-04-07 sentence segmentation corrected release",
+      "dataset_sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+      "dataset_source_url": "https://www.dropbox.com/s/ms2m13252h6xubs/data_ids_april7.zip?dl=1",
+      "document_id_algorithm": "2wiki-v1: + SHA256(UTF8 canonical JSON [title,text]); compare canonical bytes on hash match, abort collisions",
+      "duplicate_count": 1415443,
+      "embedding_text_rule": "original title + LF + space.join(original ordered sentences)",
+      "included_splits": [
+        "train",
+        "dev"
+      ],
+      "passage_granularity": "one original context entry; no chunking",
+      "raw_variant_algorithm": "variant-v1: + SHA256(UTF8 canonical JSON [original title,original sentence list])",
+      "representative_rule": "first occurrence in fixed train/dev order, original row order and context position; variants preserve every alternative",
+      "schema_version": 1,
+      "serialization": "UTF-8, ensure_ascii=false, sorted keys, compact separators, LF; documents/variants sorted by ID; refs by doc_id,split,question_id,position",
+      "split_statistics": {
+        "dev": {
+          "context_entries": 125760,
+          "evidence_invalid_context_entries_included": 700,
+          "evidence_invalid_questions": 70,
+          "qa_valid_questions": 12576,
+          "questions": 12576
+        },
+        "train": {
+          "context_entries": 1674540,
+          "evidence_invalid_context_entries_included": 19900,
+          "evidence_invalid_questions": 1990,
+          "qa_valid_questions": 167454,
+          "questions": 167454
+        }
+      },
+      "total_context_entries": 1800300,
+      "unique_passages": 384857,
+      "unique_raw_variants": 384857,
+      "output_file_checksums": {
+        "documents.jsonl": "ecc144615441cc7bbb14e2a0b2cad16984d515bcd41ec536c50d6becfd84ffac",
+        "source_variants.jsonl": "fabcc5255bd0b16f16081dce13dd5720f91702c201d4057d7cf3cfdcdbdcf042",
+        "source_mappings.jsonl": "2b2df90c77c4408405f3fdce255d32a3647e577c704c29a47628af02c511e32e",
+        "provenance.json": "dca46c525581aac66e3ae277a0b3ea9685458c1bf138f39b2efc4baf61633e7d"
+      },
+      "output_file_sizes_bytes": {
+        "documents.jsonl": 612744577,
+        "source_variants.jsonl": 575413448,
+        "source_mappings.jsonl": 784436330,
+        "provenance.json": 903
+      },
+      "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72"
+    },
+    "export_seconds": 16.125416700000642,
+    "peak_process_ram_bytes": 68263936,
+    "newly_published": true,
+    "identical_rebuild_staging_preserved": null
+  },
+  "verification": {
+    "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+    "all_file_checksums_match": true,
+    "ordered_file_record_counts": {
+      "documents.jsonl": 384857,
+      "source_variants.jsonl": 384857,
+      "source_mappings.jsonl": 1800300
+    },
+    "raw_context_entries_reconstructed_by_split": {
+      "train": 1674540,
+      "dev": 125760
+    },
+    "every_original_context_entry_preserved": true,
+    "elapsed_seconds": 91.03880529999151,
+    "peak_process_ram_bytes": 67301376,
+    "raw_archive_sha256_after": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef"
+  },
+  "final_corpus_total_bytes_including_manifest": 1972598047,
+  "available_disk_bytes_after_verification": 456333725696,
+  "tests": {
+    "passed": 198,
+    "junit": "outputs/phase2_final_tests_20261010.xml",
+    "scope": "offline; no model or retrieval calls"
+  }
+}

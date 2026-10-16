@@ -1,0 +1,2778 @@
+{
+  "dataset": "2wikimultihopqa",
+  "validated_at": "2026-10-09T16:59:34.386990+00:00",
+  "no_records_skipped": true,
+  "source": {
+    "dataset": "2wikimultihopqa",
+    "version": "2021-04-07 sentence segmentation corrected release",
+    "source_repository": "https://github.com/Alab-NII/2wikimultihop",
+    "source_readme": "https://raw.githubusercontent.com/Alab-NII/2wikimultihop/main/README.md",
+    "source_url": "https://www.dropbox.com/s/ms2m13252h6xubs/data_ids_april7.zip?dl=1",
+    "original_filename": "data_ids_april7.zip",
+    "download_date": "2026-10-10 Asia/Taipei (2026-10-09 UTC)",
+    "size_bytes": 258968175,
+    "sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+    "local_path": "data/2wiki/official_20210407/data_ids_april7.zip",
+    "repository_license": "Apache-2.0, Copyright 2020 Xanh Ho",
+    "license_url": "https://github.com/Alab-NII/2wikimultihop/blob/main/LICENSE",
+    "archive_license_note": "Archive contains test.json, dev.json, train.json and id_aliases.json only; no separate dataset license or NOTICE. Repository license is recorded without asserting it relicenses third-party Wikipedia text.",
+    "citation": "Ho et al. (2020), Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps, COLING, pp. 6609-6625",
+    "identity_basis": "Official author README April 7, 2021 update links directly to this archive; HTTP 200 and downloaded byte count match Content-Length. SHA256 is locally calculated, not an author-published checksum."
+  },
+  "splits": {
+    "train": {
+      "source_provenance": {
+        "dataset": "2wikimultihopqa",
+        "version": "2021-04-07",
+        "source_repository": "https://github.com/Alab-NII/2wikimultihop",
+        "source_readme": "https://raw.githubusercontent.com/Alab-NII/2wikimultihop/main/README.md",
+        "source_url": "https://www.dropbox.com/s/ms2m13252h6xubs/data_ids_april7.zip?dl=1",
+        "original_filename": "data_ids_april7.zip",
+        "download_date": "2026-10-10 Asia/Taipei (2026-10-09 UTC)",
+        "size_bytes": 258968175,
+        "sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+        "local_path": "data/2wiki/official_20210407/data_ids_april7.zip",
+        "repository_license": "Apache-2.0, Copyright 2020 Xanh Ho",
+        "license_url": "https://github.com/Alab-NII/2wikimultihop/blob/main/LICENSE",
+        "archive_license_note": "Archive contains test.json, dev.json, train.json and id_aliases.json only; no separate dataset license or NOTICE. Repository license is recorded without asserting it relicenses third-party Wikipedia text.",
+        "citation": "Ho et al. (2020), Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps, COLING, pp. 6609-6625",
+        "identity_basis": "Official author README April 7, 2021 update links directly to this archive; HTTP 200 and downloaded byte count match Content-Length. SHA256 is locally calculated, not an author-published checksum.",
+        "source_file": "D:\\school\\研究所\\碩論\\paper_codes\\MA-RAG\\data\\2wiki\\official_20210407\\data_ids_april7.zip",
+        "source_sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+        "source_identity": "matches_locally_audited_official_archive",
+        "archive_member": "train.json",
+        "member_sha256": "b318dbafbfed51a8029718fa59be8b616600cbff675a3b587694b28c5eedfc13",
+        "member_size_bytes": 707810660
+      },
+      "sample_count": 167454,
+      "unique_question_ids": 167454,
+      "duplicate_id_occurrences": 0,
+      "cross_split_duplicate_occurrences": 0,
+      "question_type_distribution": {
+        "bridge_comparison": 34631,
+        "compositional": 76481,
+        "inference": 4379,
+        "comparison": 51963
+      },
+      "context_entry_count_distribution": {
+        "10": 167454
+      },
+      "supporting_fact_count_distribution": {
+        "4": 34256,
+        "5": 389,
+        "2": 132512,
+        "3": 297
+      },
+      "supporting_fact_mapping": {
+        "total": 404884,
+        "matched": 402877,
+        "unmatched": 2007,
+        "success_rate": 0.995043024668794
+      },
+      "field_sets": [
+        {
+          "fields": [
+            "_id",
+            "answer",
+            "answer_id",
+            "context",
+            "entity_ids",
+            "evidences",
+            "evidences_id",
+            "question",
+            "supporting_facts",
+            "type"
+          ],
+          "count": 167454
+        }
+      ],
+      "missing_field_counts": {},
+      "null_field_counts": {
+        "answer_id": 88647
+      },
+      "empty_field_counts": {
+        "evidences_id": 30434
+      },
+      "invalid_example_count": 1990,
+      "issue_counts": {
+        "invalid_sentence_index": 2007
+      },
+      "issue_examples_first_20": [
+        {
+          "row_index": 233,
+          "question_id": "19e8111a0bda11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Leslie Goodwins' index=5, count=5"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Fireman Save My Child (1954 film)",
+              1
+            ],
+            [
+              "Leslie Goodwins",
+              5
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Alibi Ike",
+              7
+            ],
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "Leslie Goodwins",
+              5
+            ],
+            [
+              "Salvate mia figlia",
+              1
+            ],
+            [
+              "Fireman, Save My Child (1927 film)",
+              3
+            ],
+            [
+              "Fireman, Save My Child (1932 film)",
+              4
+            ],
+            [
+              "Art Gillham",
+              5
+            ],
+            [
+              "Fireman Save My Child (1954 film)",
+              2
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Peter Levin",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 288,
+          "question_id": "1a5936300bdd11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Heroes of Fort Worth' index=1, count=1"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Heroes of Fort Worth",
+              1
+            ],
+            [
+              "Alberto De Martino",
+              1
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Liz Worth",
+              2
+            ],
+            [
+              "Nancy Lee Bass",
+              2
+            ],
+            [
+              "Anna Shelton",
+              3
+            ],
+            [
+              "Flora Blanc",
+              1
+            ],
+            [
+              "Michael Worth",
+              1
+            ],
+            [
+              "Alberto De Martino",
+              5
+            ],
+            [
+              "Bob Bolen",
+              4
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Heroes of Fort Worth",
+              1
+            ],
+            [
+              "William Worth (diplomat)",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 438,
+          "question_id": "701e862a0bdc11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Let There Be Light (1998 film)' index=2, count=2"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Let There Be Light (1998 film)",
+              2
+            ],
+            [
+              "Arthur Joffé",
+              0
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "John Farrell (businessman)",
+              1
+            ],
+            [
+              "John Donatich",
+              1
+            ],
+            [
+              "Michael Govan",
+              2
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ],
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "Olav Aaraas",
+              4
+            ],
+            [
+              "Arthur Joffé",
+              5
+            ],
+            [
+              "Let There Be Light (1998 film)",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 572,
+          "question_id": "aa9190680baf11ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Henry VIII the Sparrow' index=3, count=3"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Wenceslaus of Krosno",
+              1
+            ],
+            [
+              "Henry VIII the Sparrow",
+              3
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Lyon Cohen",
+              2
+            ],
+            [
+              "Wenceslaus of Krosno",
+              2
+            ],
+            [
+              "Prithvipati Shah",
+              2
+            ],
+            [
+              "Adam Wenceslaus, Duke of Cieszyn",
+              3
+            ],
+            [
+              "Henry Wenceslaus, Duke of Oels-Bernstadt",
+              3
+            ],
+            [
+              "Sophia of Bavaria",
+              2
+            ],
+            [
+              "Abd al-Muttalib",
+              1
+            ],
+            [
+              "Henry VIII the Sparrow",
+              3
+            ],
+            [
+              "Kaya Alp",
+              1
+            ],
+            [
+              "John Westley",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 731,
+          "question_id": "ed4ea5c80bda11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Joseph Henabery' index=1, count=1"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Clear the Decks",
+              0
+            ],
+            [
+              "Joseph Henabery",
+              1
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Clear the Decks",
+              4
+            ],
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "Olav Aaraas",
+              4
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Jason Moore (director)",
+              1
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Joseph Henabery",
+              1
+            ],
+            [
+              "Jesse E. Hobson",
+              2
+            ],
+            [
+              "S. N. Mathur",
+              2
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 1032,
+          "question_id": "e4eab6920bda11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Edward Ludwig' index=6, count=6"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "The Gun Hawk",
+              0
+            ],
+            [
+              "Edward Ludwig",
+              6
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Jesse E. Hobson",
+              2
+            ],
+            [
+              "Edward Ludwig",
+              6
+            ],
+            [
+              "Olav Aaraas",
+              4
+            ],
+            [
+              "The Time, the Place and the Girl (1946 film)",
+              2
+            ],
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "S. N. Mathur",
+              2
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "The Gun Hawk",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 1069,
+          "question_id": "c5d62f260bd911eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Richard L. Bare' index=12, count=11"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "This Rebel Breed",
+              0
+            ],
+            [
+              "Richard L. Bare",
+              12
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "S. N. Mathur",
+              2
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Jesse E. Hobson",
+              2
+            ],
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "Olav Aaraas",
+              4
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "This Rebel Breed",
+              2
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ],
+            [
+              "Richard L. Bare",
+              11
+            ],
+            [
+              "Michael Govan",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 1083,
+          "question_id": "8d616eaa0bdc11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Paul McCartney' index=17, count=17"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Calico Skies",
+              0
+            ],
+            [
+              "Paul McCartney",
+              17
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Dáithí Sproule",
+              2
+            ],
+            [
+              "Paul McCartney",
+              17
+            ],
+            [
+              "Bernie Bonvoisin",
+              3
+            ],
+            [
+              "Calico Skies",
+              11
+            ],
+            [
+              "Caspar Babypants",
+              1
+            ],
+            [
+              "Billy Milano",
+              3
+            ],
+            [
+              "Panda (Astro song)",
+              2
+            ],
+            [
+              "Astrid North",
+              3
+            ],
+            [
+              "Kristian Leontiou",
+              1
+            ],
+            [
+              "O Valencia!",
+              6
+            ]
+          ]
+        },
+        {
+          "row_index": 1124,
+          "question_id": "c56956660bda11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'S. Sylvan Simon' index=8, count=8"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "The Crime of Doctor Hallet",
+              0
+            ],
+            [
+              "S. Sylvan Simon",
+              8
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "The Crime of Shirvanskaya",
+              1
+            ],
+            [
+              "The Crime of Sylvestre Bonnard (film)",
+              2
+            ],
+            [
+              "S. Sylvan Simon",
+              8
+            ],
+            [
+              "Crime of the Decade",
+              1
+            ],
+            [
+              "The Crime of Korea",
+              1
+            ],
+            [
+              "The Crime of Doctor Hallet",
+              2
+            ],
+            [
+              "The Crime of Cuenca",
+              3
+            ],
+            [
+              "Emperor Daigo",
+              2
+            ],
+            [
+              "The Crime of Dr. Forbes",
+              3
+            ],
+            [
+              "The Crime of Helen Stanley",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 1351,
+          "question_id": "8595eedc0bda11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Janusz III of Masovia' index=3, count=3"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Janusz III of Masovia",
+              3
+            ],
+            [
+              "Konrad III Rudy",
+              2
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Anna of Masovia",
+              4
+            ],
+            [
+              "Siemowit III, Duke of Masovia",
+              1
+            ],
+            [
+              "Sophia of Masovia",
+              15
+            ],
+            [
+              "Konrad III Rudy",
+              6
+            ],
+            [
+              "Janusz III of Masovia",
+              3
+            ],
+            [
+              "Jan Swołyński",
+              9
+            ],
+            [
+              "Margaret of Masovia",
+              4
+            ],
+            [
+              "Theodred II (Bishop of Elmham)",
+              2
+            ],
+            [
+              "Siemowit I of Masovia",
+              3
+            ],
+            [
+              "Zbigniew Oleśnicki (primate of Poland)",
+              5
+            ]
+          ]
+        },
+        {
+          "row_index": 1449,
+          "question_id": "bdab0d040bdd11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Countess Palatine Francisca Christina of Sulzbach' index=5, count=5"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Countess Palatine Francisca Christina of Sulzbach",
+              5
+            ],
+            [
+              "Theodore Eustace, Count Palatine of Sulzbach",
+              0
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Count Palatine Joseph Charles of Sulzbach",
+              1
+            ],
+            [
+              "Theodore Eustace, Count Palatine of Sulzbach",
+              1
+            ],
+            [
+              "Countess Palatine Magdalene Catherine of Zweibrücken",
+              1
+            ],
+            [
+              "Countess Palatine Maria Franziska of Sulzbach",
+              3
+            ],
+            [
+              "Hedwig of the Palatinate-Sulzbach",
+              1
+            ],
+            [
+              "Berengar II of Sulzbach",
+              4
+            ],
+            [
+              "Countess Palatine Francisca Christina of Sulzbach",
+              5
+            ],
+            [
+              "Otto Henry, Count Palatine of Sulzbach",
+              1
+            ],
+            [
+              "Ignatius Fortuna",
+              8
+            ],
+            [
+              "Gebhard III of Sulzbach",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 1655,
+          "question_id": "42b7a0ee0bdd11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'William Clemens (film director)' index=8, count=7"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Night in New Orleans",
+              0
+            ],
+            [
+              "William Clemens (film director)",
+              8
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "William Clemens (film director)",
+              7
+            ],
+            [
+              "Paul Mares",
+              14
+            ],
+            [
+              "Lisette Verea",
+              1
+            ],
+            [
+              "Paul Soniat",
+              7
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Michael Govan",
+              2
+            ],
+            [
+              "Night in New Orleans",
+              3
+            ],
+            [
+              "Peter Pasetti",
+              4
+            ],
+            [
+              "Peter Levin",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 1738,
+          "question_id": "2a84f3c80bdd11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Final Offer' index=9, count=9"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Final Offer",
+              9
+            ],
+            [
+              "Sturla Gunnarsson",
+              3
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Sturla Gunnarsson",
+              12
+            ],
+            [
+              "Now Where Did the 7th Company Get to?",
+              2
+            ],
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Olav Aaraas",
+              4
+            ],
+            [
+              "Jason Moore (director)",
+              1
+            ],
+            [
+              "The Seventh Company Outdoors",
+              2
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ],
+            [
+              "Final Offer",
+              9
+            ],
+            [
+              "Peter Levin",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 1839,
+          "question_id": "455533d40bb011ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Waldemar IV, Prince of Anhalt-Dessau' index=2, count=2"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Waldemar IV, Prince of Anhalt-Dessau",
+              2
+            ],
+            [
+              "Sigismund I, Prince of Anhalt-Dessau",
+              1
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Ernest I, Prince of Anhalt-Dessau",
+              2
+            ],
+            [
+              "Countess Henriette Catherine of Nassau",
+              1
+            ],
+            [
+              "Rudolph IV, Prince of Anhalt-Dessau",
+              2
+            ],
+            [
+              "George I, Prince of Anhalt-Dessau",
+              2
+            ],
+            [
+              "Sigismund II, Prince of Anhalt-Dessau",
+              2
+            ],
+            [
+              "Sigismund III, Prince of Anhalt-Dessau",
+              2
+            ],
+            [
+              "George II, Prince of Anhalt-Dessau",
+              2
+            ],
+            [
+              "Waldemar IV, Prince of Anhalt-Dessau",
+              2
+            ],
+            [
+              "Sigismund I, Prince of Anhalt-Dessau",
+              2
+            ],
+            [
+              "Albert V, Prince of Anhalt-Dessau",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 1845,
+          "question_id": "9a630f960bdc11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Leslie Goodwins' index=5, count=5"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Men Against the Sky",
+              0
+            ],
+            [
+              "Leslie Goodwins",
+              5
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Mole Men Against the Son of Hercules",
+              1
+            ],
+            [
+              "Men of the Sky (1931 film)",
+              3
+            ],
+            [
+              "Men Against the Sky",
+              2
+            ],
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "Jesse E. Hobson",
+              2
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Leslie Goodwins",
+              5
+            ],
+            [
+              "Where Was I",
+              1
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Olav Aaraas",
+              4
+            ]
+          ]
+        },
+        {
+          "row_index": 1902,
+          "question_id": "06b8a30e0bdd11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Good Morning, Little Countess' index=2, count=2"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Good Morning, Little Countess",
+              2
+            ],
+            [
+              "Luis César Amadori",
+              0
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Adrian Cronauer",
+              1
+            ],
+            [
+              "Thomas Scott (diver)",
+              1
+            ],
+            [
+              "Luis César Amadori",
+              3
+            ],
+            [
+              "Etan Boritzer",
+              23
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Good Morning, Night",
+              3
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Bill Smith (footballer, born 1897)",
+              1
+            ],
+            [
+              "Theodred II (Bishop of Elmham)",
+              2
+            ],
+            [
+              "Good Morning, Little Countess",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 1989,
+          "question_id": "8c5d26fc0bdc11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'William Clemens (film director)' index=8, count=7"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Here Comes Carter",
+              1
+            ],
+            [
+              "William Clemens (film director)",
+              8
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Here Comes Carter",
+              6
+            ],
+            [
+              "Seton I. Miller",
+              3
+            ],
+            [
+              "Bahij Hojeij",
+              2
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Laura Caro",
+              3
+            ],
+            [
+              "William Clemens (film director)",
+              7
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "Olav Aaraas",
+              4
+            ],
+            [
+              "Sidney Buchman",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 2354,
+          "question_id": "8ae9e8fa0bdc11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Behind the Clouds the Sun Is Shining' index=2, count=1"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Behind the Clouds the Sun Is Shining",
+              2
+            ],
+            [
+              "Willy Mullens",
+              1
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "The Sun",
+              2
+            ],
+            [
+              "Motherland (disambiguation)",
+              2
+            ],
+            [
+              "Behind the Clouds the Sun Is Shining",
+              1
+            ],
+            [
+              "The House of the Sun (film)",
+              2
+            ],
+            [
+              "Son of the Sun",
+              1
+            ],
+            [
+              "Where Was I",
+              1
+            ],
+            [
+              "Sun Is Shining",
+              1
+            ],
+            [
+              "Willy Mullens",
+              6
+            ],
+            [
+              "South of the Clouds (2004 film)",
+              6
+            ],
+            [
+              "Behind the Sun (Dive album)",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 2393,
+          "question_id": "4c2b4c320bda11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Gene Fowler Jr.' index=7, count=7"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Here Come the Jets",
+              0
+            ],
+            [
+              "Gene Fowler Jr.",
+              7
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Here Come the Nelsons",
+              4
+            ],
+            [
+              "Here Come the Co-Eds",
+              2
+            ],
+            [
+              "Michael Denkha",
+              1
+            ],
+            [
+              "Here Come the Waves",
+              2
+            ],
+            [
+              "Here Come the Tigers",
+              1
+            ],
+            [
+              "Gene Fowler Jr.",
+              7
+            ],
+            [
+              "Camilla Ah Kin",
+              1
+            ],
+            [
+              "Here Come the Marines",
+              2
+            ],
+            [
+              "Here Come the Jets",
+              3
+            ],
+            [
+              "Omar Musa",
+              4
+            ]
+          ]
+        },
+        {
+          "row_index": 2459,
+          "question_id": "8faa0b5a0bdb11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'The Loves of Käthe Keller' index=2, count=2"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "The Loves of Käthe Keller",
+              2
+            ],
+            [
+              "Carl Froelich",
+              1
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "The Loves of Salammbo",
+              2
+            ],
+            [
+              "Ney Keller",
+              1
+            ],
+            [
+              "The Loves of Hercules",
+              2
+            ],
+            [
+              "Los amores de una viuda",
+              2
+            ],
+            [
+              "The Loves of Carmen (1948 film)",
+              4
+            ],
+            [
+              "Peter Keller (footballer)",
+              1
+            ],
+            [
+              "The Loves of Käthe Keller",
+              2
+            ],
+            [
+              "Ginette Keller",
+              1
+            ],
+            [
+              "Verena Keller (singer)",
+              1
+            ],
+            [
+              "Carl Froelich",
+              3
+            ]
+          ]
+        }
+      ],
+      "correctness_evaluation_available": true,
+      "evaluation_eligibility_counts": {
+        "qa_valid": 167454,
+        "evidence_valid": 165464,
+        "qa_excluded": 0,
+        "evidence_excluded": 1990
+      },
+      "qa_exclusion_question_counts_by_reason": {},
+      "evidence_exclusion_question_counts_by_reason": {
+        "invalid_sentence_index": 1990
+      }
+    },
+    "dev": {
+      "source_provenance": {
+        "dataset": "2wikimultihopqa",
+        "version": "2021-04-07",
+        "source_repository": "https://github.com/Alab-NII/2wikimultihop",
+        "source_readme": "https://raw.githubusercontent.com/Alab-NII/2wikimultihop/main/README.md",
+        "source_url": "https://www.dropbox.com/s/ms2m13252h6xubs/data_ids_april7.zip?dl=1",
+        "original_filename": "data_ids_april7.zip",
+        "download_date": "2026-10-10 Asia/Taipei (2026-10-09 UTC)",
+        "size_bytes": 258968175,
+        "sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+        "local_path": "data/2wiki/official_20210407/data_ids_april7.zip",
+        "repository_license": "Apache-2.0, Copyright 2020 Xanh Ho",
+        "license_url": "https://github.com/Alab-NII/2wikimultihop/blob/main/LICENSE",
+        "archive_license_note": "Archive contains test.json, dev.json, train.json and id_aliases.json only; no separate dataset license or NOTICE. Repository license is recorded without asserting it relicenses third-party Wikipedia text.",
+        "citation": "Ho et al. (2020), Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps, COLING, pp. 6609-6625",
+        "identity_basis": "Official author README April 7, 2021 update links directly to this archive; HTTP 200 and downloaded byte count match Content-Length. SHA256 is locally calculated, not an author-published checksum.",
+        "source_file": "D:\\school\\研究所\\碩論\\paper_codes\\MA-RAG\\data\\2wiki\\official_20210407\\data_ids_april7.zip",
+        "source_sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+        "source_identity": "matches_locally_audited_official_archive",
+        "archive_member": "dev.json",
+        "member_sha256": "79f77ae104088ea8e25b1a65dbece768d45771194663bc5660ec9a98070dadf5",
+        "member_size_bytes": 57614142
+      },
+      "sample_count": 12576,
+      "unique_question_ids": 12576,
+      "duplicate_id_occurrences": 0,
+      "cross_split_duplicate_occurrences": 0,
+      "question_type_distribution": {
+        "compositional": 5236,
+        "comparison": 3040,
+        "inference": 1549,
+        "bridge_comparison": 2751
+      },
+      "context_entry_count_distribution": {
+        "10": 12576
+      },
+      "supporting_fact_count_distribution": {
+        "2": 9805,
+        "4": 2739,
+        "6": 1,
+        "3": 20,
+        "5": 11
+      },
+      "supporting_fact_mapping": {
+        "total": 30687,
+        "matched": 30617,
+        "unmatched": 70,
+        "success_rate": 0.9977189037703262
+      },
+      "field_sets": [
+        {
+          "fields": [
+            "_id",
+            "answer",
+            "answer_id",
+            "context",
+            "entity_ids",
+            "evidences",
+            "evidences_id",
+            "question",
+            "supporting_facts",
+            "type"
+          ],
+          "count": 12576
+        }
+      ],
+      "missing_field_counts": {},
+      "null_field_counts": {
+        "answer_id": 1973
+      },
+      "empty_field_counts": {
+        "evidences_id": 4512
+      },
+      "invalid_example_count": 70,
+      "issue_counts": {
+        "invalid_sentence_index": 70
+      },
+      "issue_examples_first_20": [
+        {
+          "row_index": 1123,
+          "question_id": "695689d20baf11ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Aditya Chopra' index=19, count=15"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Rani Mukerji",
+              17
+            ],
+            [
+              "Aditya Chopra",
+              19
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "John Adams (merchant)",
+              2
+            ],
+            [
+              "Ludwig von Westphalen",
+              1
+            ],
+            [
+              "Barthold A. Butenschøn Sr.",
+              14
+            ],
+            [
+              "Mohammad Ilyas (cricketer)",
+              2
+            ],
+            [
+              "Peter Burroughs",
+              2
+            ],
+            [
+              "Ogawa Mataji",
+              2
+            ],
+            [
+              "Aditya Chopra",
+              15
+            ],
+            [
+              "Bill Dundee",
+              2
+            ],
+            [
+              "Rani Mukerji",
+              18
+            ],
+            [
+              "James Armour (Master mason)",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 1539,
+          "question_id": "37a4158e0bb011ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Marie Charlotte de La Trémoille' index=2, count=2"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Marie Charlotte de La Trémoille",
+              2
+            ],
+            [
+              "Marie de La Tour d'Auvergne",
+              2
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Claude de La Trémoille",
+              11
+            ],
+            [
+              "Charlotte de La Trémoille",
+              2
+            ],
+            [
+              "François II de La Trémoille",
+              2
+            ],
+            [
+              "Marie de La Tour d'Auvergne",
+              4
+            ],
+            [
+              "Jean Bretagne Charles de La Trémoille",
+              1
+            ],
+            [
+              "Charles Armand René de La Trémoille",
+              11
+            ],
+            [
+              "Héctor Barrantes",
+              2
+            ],
+            [
+              "Henri Charles de La Trémoille",
+              12
+            ],
+            [
+              "Henri de La Trémoille",
+              2
+            ],
+            [
+              "Marie Charlotte de La Trémoille",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 2196,
+          "question_id": "26af280a0bdc11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Georges Lautner' index=3, count=3"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Operation Gold Ingot",
+              0
+            ],
+            [
+              "Georges Lautner",
+              3
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Derry Quinn",
+              2
+            ],
+            [
+              "Judah Sandhy",
+              2
+            ],
+            [
+              "Fatima bint Mubarak Al Ketbi",
+              2
+            ],
+            [
+              "Trinidad Tecson",
+              3
+            ],
+            [
+              "Operation Gold Ingot",
+              2
+            ],
+            [
+              "Georges Lautner",
+              3
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Kekuʻiapoiwa II",
+              1
+            ],
+            [
+              "Minamoto no Chikako",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 2253,
+          "question_id": "355ac9940bb011ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Prince Franz de Paula of Liechtenstein' index=3, count=3"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Prince Louis of Liechtenstein",
+              0
+            ],
+            [
+              "Prince Franz de Paula of Liechtenstein",
+              3
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Hieronymus von Colloredo",
+              2
+            ],
+            [
+              "Johann Amadeus von Thugut",
+              1
+            ],
+            [
+              "Hannah Arnold",
+              1
+            ],
+            [
+              "Johann I Joseph, Prince of Liechtenstein",
+              3
+            ],
+            [
+              "Tjuyu",
+              2
+            ],
+            [
+              "Franz de Paula Triesnecker",
+              1
+            ],
+            [
+              "Prince Louis of Liechtenstein",
+              3
+            ],
+            [
+              "Franz I, Prince of Liechtenstein",
+              1
+            ],
+            [
+              "Prince Franz de Paula of Liechtenstein",
+              3
+            ],
+            [
+              "Hubba bint Hulail",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 2388,
+          "question_id": "dab62b000baf11ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Duke Siegfried August in Bavaria' index=3, count=3"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Duke Siegfried August in Bavaria",
+              3
+            ],
+            [
+              "Princess Amalie of Saxe-Coburg and Gotha",
+              1
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Tjuyu",
+              2
+            ],
+            [
+              "Kaoru Hatoyama",
+              1
+            ],
+            [
+              "Hubba bint Hulail",
+              1
+            ],
+            [
+              "Duke Franz Joseph in Bavaria",
+              4
+            ],
+            [
+              "Mona Hopton Bell",
+              2
+            ],
+            [
+              "Duchess Marie Gabrielle in Bavaria",
+              3
+            ],
+            [
+              "Countess Palatine Maria Anna of Zweibrücken-Birkenfeld",
+              2
+            ],
+            [
+              "Duke Siegfried August in Bavaria",
+              3
+            ],
+            [
+              "Hannah Arnold",
+              1
+            ],
+            [
+              "Princess Amalie of Saxe-Coburg and Gotha",
+              3
+            ]
+          ]
+        },
+        {
+          "row_index": 2472,
+          "question_id": "967024260bd911eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Georges Lautner' index=3, count=3"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Death of a Corrupt Man",
+              0
+            ],
+            [
+              "Georges Lautner",
+              3
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Kekuʻiapoiwa II",
+              1
+            ],
+            [
+              "Minamoto no Chikako",
+              1
+            ],
+            [
+              "Trinidad Tecson",
+              3
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Fatima bint Mubarak Al Ketbi",
+              2
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ],
+            [
+              "Susan B. Nelson",
+              1
+            ],
+            [
+              "Death of a Corrupt Man",
+              2
+            ],
+            [
+              "Georges Lautner",
+              3
+            ]
+          ]
+        },
+        {
+          "row_index": 2875,
+          "question_id": "024076580bb011ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Hedwig of Masovia' index=2, count=2"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Hedwig of Masovia",
+              2
+            ],
+            [
+              "Siemowit IV, Duke of Masovia",
+              4
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Hedwig of Masovia",
+              2
+            ],
+            [
+              "Gaudemunda of Lithuania",
+              4
+            ],
+            [
+              "Anna of Masovia",
+              4
+            ],
+            [
+              "Siemowit III, Duke of Masovia",
+              1
+            ],
+            [
+              "Kaya Alp",
+              1
+            ],
+            [
+              "Sophia of Masovia",
+              15
+            ],
+            [
+              "Jan Štěkna",
+              1
+            ],
+            [
+              "Abd al-Muttalib",
+              1
+            ],
+            [
+              "Siemowit I of Masovia",
+              3
+            ],
+            [
+              "Siemowit IV, Duke of Masovia",
+              9
+            ]
+          ]
+        },
+        {
+          "row_index": 3163,
+          "question_id": "dd2b76c60bda11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Princess Marie Eleonore of Albania' index=3, count=3"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Princess Marie Eleonore of Albania",
+              3
+            ],
+            [
+              "Princess Sophie of Albania",
+              0
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Princess Sophie of Albania",
+              3
+            ],
+            [
+              "Sophie Prieur",
+              4
+            ],
+            [
+              "Terence Robinson",
+              1
+            ],
+            [
+              "Etan Boritzer",
+              23
+            ],
+            [
+              "Brian Saunders (weightlifter)",
+              1
+            ],
+            [
+              "Les Richards",
+              1
+            ],
+            [
+              "Princess Marie Eleonore of Albania",
+              3
+            ],
+            [
+              "Theodred II (Bishop of Elmham)",
+              2
+            ],
+            [
+              "Marie Forleo",
+              2
+            ],
+            [
+              "Pamela Jain",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 3384,
+          "question_id": "617f8d060bde11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Robert North Bradbury' index=10, count=6"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Cavalry (1936 American film)",
+              0
+            ],
+            [
+              "Robert North Bradbury",
+              10
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Olav Aaraas",
+              4
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ],
+            [
+              "Michael Govan",
+              2
+            ],
+            [
+              "Cavalry (1936 American film)",
+              1
+            ],
+            [
+              "Brian Kennedy (gallery director)",
+              4
+            ],
+            [
+              "S. N. Mathur",
+              2
+            ],
+            [
+              "Robert North Bradbury",
+              6
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Jesse E. Hobson",
+              2
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 3883,
+          "question_id": "f87c0e920bdd11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Nils R. Müller' index=7, count=7"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Ektemann alene",
+              0
+            ],
+            [
+              "Nils R. Müller",
+              7
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Nils R. Müller",
+              7
+            ],
+            [
+              "John Farrell (businessman)",
+              1
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ],
+            [
+              "Ektemann alene",
+              1
+            ],
+            [
+              "Michael Govan",
+              2
+            ],
+            [
+              "Etan Boritzer",
+              23
+            ],
+            [
+              "John Donatich",
+              1
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Olav Aaraas",
+              4
+            ],
+            [
+              "Peter Levin",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 4089,
+          "question_id": "b7a7f4ba0bda11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Georges Lautner' index=3, count=3"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Les Tontons flingueurs",
+              0
+            ],
+            [
+              "Georges Lautner",
+              3
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Kekuʻiapoiwa II",
+              1
+            ],
+            [
+              "Minamoto no Chikako",
+              1
+            ],
+            [
+              "Les Tontons flingueurs",
+              8
+            ],
+            [
+              "Georges Lautner",
+              3
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Trinidad Tecson",
+              3
+            ],
+            [
+              "Susan B. Nelson",
+              1
+            ],
+            [
+              "Fatima bint Mubarak Al Ketbi",
+              2
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 4328,
+          "question_id": "618c39ce0bda11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Georges Lautner' index=3, count=3"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "On aura tout vu",
+              0
+            ],
+            [
+              "Georges Lautner",
+              3
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Marie-Louise Arsenault",
+              3
+            ],
+            [
+              "Minamoto no Chikako",
+              1
+            ],
+            [
+              "Susan B. Nelson",
+              1
+            ],
+            [
+              "Kekuʻiapoiwa II",
+              1
+            ],
+            [
+              "On aura tout vu",
+              1
+            ],
+            [
+              "Fatima bint Mubarak Al Ketbi",
+              2
+            ],
+            [
+              "Trinidad Tecson",
+              3
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Georges Lautner",
+              3
+            ]
+          ]
+        },
+        {
+          "row_index": 4514,
+          "question_id": "3f210e940baf11ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Albert VI, Duke of Bavaria' index=1, count=1"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Albert VI, Duke of Bavaria",
+              1
+            ],
+            [
+              "Renata of Lorraine",
+              1
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Renata of Lorraine",
+              3
+            ],
+            [
+              "Tjuyu",
+              2
+            ],
+            [
+              "Hannah Arnold",
+              1
+            ],
+            [
+              "John VI, Duke of Mecklenburg",
+              1
+            ],
+            [
+              "Albert VI, Duke of Bavaria",
+              1
+            ],
+            [
+              "Maximilian Henry of Bavaria",
+              3
+            ],
+            [
+              "Sigismund, Duke of Bavaria",
+              2
+            ],
+            [
+              "Susanna of Bavaria",
+              3
+            ],
+            [
+              "Hubba bint Hulail",
+              1
+            ],
+            [
+              "Duchess Marie Gabrielle in Bavaria",
+              3
+            ]
+          ]
+        },
+        {
+          "row_index": 4676,
+          "question_id": "eb2a75220bdc11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Louis IX, Landgrave of Hesse-Darmstadt' index=6, count=6"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Princess Caroline of Hesse-Darmstadt",
+              1
+            ],
+            [
+              "Louis IX, Landgrave of Hesse-Darmstadt",
+              6
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Caroline of Hesse-Homburg",
+              4
+            ],
+            [
+              "Louis IX, Landgrave of Hesse-Darmstadt",
+              6
+            ],
+            [
+              "Philip of Hesse-Darmstadt",
+              1
+            ],
+            [
+              "Prince George Charles of Hesse-Darmstadt",
+              2
+            ],
+            [
+              "Countess Palatine Caroline of Zweibrücken",
+              2
+            ],
+            [
+              "Prince Francis Ernest of Hesse-Darmstadt",
+              3
+            ],
+            [
+              "Landgravine Auguste of Hesse-Homburg",
+              3
+            ],
+            [
+              "Louis VI, Landgrave of Hesse-Darmstadt",
+              2
+            ],
+            [
+              "Princess Caroline of Hesse-Darmstadt",
+              6
+            ],
+            [
+              "Prince Charles William of Hesse-Darmstadt",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 4935,
+          "question_id": "ef8526a60bd911eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Louis IX, Landgrave of Hesse-Darmstadt' index=6, count=6"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Princess Caroline of Hesse-Darmstadt",
+              1
+            ],
+            [
+              "Louis IX, Landgrave of Hesse-Darmstadt",
+              6
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Louis IX, Landgrave of Hesse-Darmstadt",
+              6
+            ],
+            [
+              "Countess Palatine Caroline of Zweibrücken",
+              2
+            ],
+            [
+              "Louis VI, Landgrave of Hesse-Darmstadt",
+              2
+            ],
+            [
+              "Prince George Charles of Hesse-Darmstadt",
+              2
+            ],
+            [
+              "Prince Charles William of Hesse-Darmstadt",
+              1
+            ],
+            [
+              "Caroline of Hesse-Homburg",
+              4
+            ],
+            [
+              "Louis V, Landgrave of Hesse-Darmstadt",
+              9
+            ],
+            [
+              "Princess Caroline of Hesse-Darmstadt",
+              6
+            ],
+            [
+              "Prince Francis Ernest of Hesse-Darmstadt",
+              3
+            ],
+            [
+              "Landgravine Auguste of Hesse-Homburg",
+              3
+            ]
+          ]
+        },
+        {
+          "row_index": 4992,
+          "question_id": "43bc7b940bde11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Yo también tengo fiaca' index=2, count=2"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Yo también tengo fiaca",
+              2
+            ],
+            [
+              "Enrique Cahen Salaberry",
+              1
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Enrique Cahen Salaberry",
+              2
+            ],
+            [
+              "Michael Govan",
+              2
+            ],
+            [
+              "Pablo Pineda",
+              11
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Yo también tengo fiaca",
+              2
+            ],
+            [
+              "John Farrell (businessman)",
+              1
+            ],
+            [
+              "Etan Boritzer",
+              23
+            ],
+            [
+              "John Donatich",
+              1
+            ],
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ]
+          ]
+        },
+        {
+          "row_index": 5084,
+          "question_id": "95bf64480bdd11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Adolph of Cleves, Lord of Ravenstein' index=1, count=1"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Adolph of Cleves, Lord of Ravenstein",
+              1
+            ],
+            [
+              "Mary of Burgundy, Duchess of Cleves",
+              6
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Anna van Bourgondië",
+              4
+            ],
+            [
+              "Elisabeth of Cleves, Countess of Schwarzburg-Blankenburg",
+              2
+            ],
+            [
+              "Adolph of Cleves, Lord of Ravenstein",
+              1
+            ],
+            [
+              "Beatrice of Coimbra",
+              5
+            ],
+            [
+              "Adolph II of the Marck",
+              5
+            ],
+            [
+              "Adolph I, Duke of Cleves",
+              1
+            ],
+            [
+              "Margaret of Cleves, Duchess of Bavaria-Munich",
+              3
+            ],
+            [
+              "Karl Harst",
+              2
+            ],
+            [
+              "Mary of Burgundy, Duchess of Cleves",
+              7
+            ],
+            [
+              "Philip of Cleves, Lord of Ravenstein",
+              1
+            ]
+          ]
+        },
+        {
+          "row_index": 5127,
+          "question_id": "595209340bb011ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Otto II, Count of Guelders' index=3, count=2"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Reginald I of Guelders",
+              1
+            ],
+            [
+              "Otto II, Count of Guelders",
+              3
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Catherine of Cleves (1417–1479)",
+              3
+            ],
+            [
+              "Reginald II, Duke of Guelders",
+              2
+            ],
+            [
+              "Gerard III, Count of Guelders",
+              3
+            ],
+            [
+              "Otto I, Count of Guelders",
+              4
+            ],
+            [
+              "Eleanor of Woodstock",
+              5
+            ],
+            [
+              "Otto II, Count of Guelders",
+              2
+            ],
+            [
+              "Maria, Duchess of Guelders",
+              9
+            ],
+            [
+              "Reginald I of Guelders",
+              10
+            ],
+            [
+              "Reginald of Piperno",
+              1
+            ],
+            [
+              "Reginald III, Duke of Guelders",
+              10
+            ]
+          ]
+        },
+        {
+          "row_index": 5182,
+          "question_id": "593a648c0bb011ebab90acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'John I, Count of La Marche' index=1, count=1"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "John I, Count of La Marche",
+              1
+            ],
+            [
+              "James I, Count of La Marche",
+              0
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Hugh XI of Lusignan",
+              4
+            ],
+            [
+              "James II, Count of La Marche",
+              1
+            ],
+            [
+              "John I, Count of La Marche",
+              1
+            ],
+            [
+              "William III of Geneva",
+              2
+            ],
+            [
+              "Prince Robert, Count of La Marche",
+              4
+            ],
+            [
+              "James I, Count of La Marche",
+              2
+            ],
+            [
+              "Arnold V, Count of Loon",
+              2
+            ],
+            [
+              "Anne de Bourbon",
+              2
+            ],
+            [
+              "Bernard d'Armagnac, Count of Pardiac",
+              5
+            ],
+            [
+              "Louis VIII, Duke of Bavaria",
+              3
+            ]
+          ]
+        },
+        {
+          "row_index": 5440,
+          "question_id": "c049b0240bdd11eba7f7acde48001122",
+          "issues": [
+            {
+              "code": "invalid_sentence_index",
+              "detail": "'Mario Bava' index=13, count=10"
+            }
+          ],
+          "supporting_facts": [
+            [
+              "Dr. Goldfoot and the Girl Bombs",
+              1
+            ],
+            [
+              "Mario Bava",
+              13
+            ]
+          ],
+          "context_sentence_counts": [
+            [
+              "Peter Levin",
+              1
+            ],
+            [
+              "Ian Barry (director)",
+              1
+            ],
+            [
+              "Dr. Goldfoot and the Bikini Machine",
+              6
+            ],
+            [
+              "Eric Chan",
+              2
+            ],
+            [
+              "Black Sabbath (film)",
+              13
+            ],
+            [
+              "Dr. Goldfoot and the Girl Bombs",
+              6
+            ],
+            [
+              "Antonio Rinaldi (cinematographer)",
+              2
+            ],
+            [
+              "Mario Bava",
+              10
+            ],
+            [
+              "Dana Blankstein",
+              2
+            ],
+            [
+              "The Time, the Place and the Girl (1946 film)",
+              2
+            ]
+          ]
+        }
+      ],
+      "correctness_evaluation_available": true,
+      "evaluation_eligibility_counts": {
+        "qa_valid": 12576,
+        "evidence_valid": 12506,
+        "qa_excluded": 0,
+        "evidence_excluded": 70
+      },
+      "qa_exclusion_question_counts_by_reason": {},
+      "evidence_exclusion_question_counts_by_reason": {
+        "invalid_sentence_index": 70
+      }
+    },
+    "test": {
+      "source_provenance": {
+        "dataset": "2wikimultihopqa",
+        "version": "2021-04-07",
+        "source_repository": "https://github.com/Alab-NII/2wikimultihop",
+        "source_readme": "https://raw.githubusercontent.com/Alab-NII/2wikimultihop/main/README.md",
+        "source_url": "https://www.dropbox.com/s/ms2m13252h6xubs/data_ids_april7.zip?dl=1",
+        "original_filename": "data_ids_april7.zip",
+        "download_date": "2026-10-10 Asia/Taipei (2026-10-09 UTC)",
+        "size_bytes": 258968175,
+        "sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+        "local_path": "data/2wiki/official_20210407/data_ids_april7.zip",
+        "repository_license": "Apache-2.0, Copyright 2020 Xanh Ho",
+        "license_url": "https://github.com/Alab-NII/2wikimultihop/blob/main/LICENSE",
+        "archive_license_note": "Archive contains test.json, dev.json, train.json and id_aliases.json only; no separate dataset license or NOTICE. Repository license is recorded without asserting it relicenses third-party Wikipedia text.",
+        "citation": "Ho et al. (2020), Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps, COLING, pp. 6609-6625",
+        "identity_basis": "Official author README April 7, 2021 update links directly to this archive; HTTP 200 and downloaded byte count match Content-Length. SHA256 is locally calculated, not an author-published checksum.",
+        "source_file": "D:\\school\\研究所\\碩論\\paper_codes\\MA-RAG\\data\\2wiki\\official_20210407\\data_ids_april7.zip",
+        "source_sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+        "source_identity": "matches_locally_audited_official_archive",
+        "archive_member": "test.json",
+        "member_sha256": "48b196d4ba8557343abb9bd1ad03566bc02762ecd734617ff910027c33821b04",
+        "member_size_bytes": 53838398
+      },
+      "sample_count": 12576,
+      "unique_question_ids": 12576,
+      "duplicate_id_occurrences": 0,
+      "cross_split_duplicate_occurrences": 0,
+      "question_type_distribution": {
+        "compositional": 5262,
+        "bridge_comparison": 2778,
+        "inference": 1550,
+        "comparison": 2986
+      },
+      "context_entry_count_distribution": {
+        "10": 12576
+      },
+      "supporting_fact_count_distribution": {
+        "0": 12576
+      },
+      "supporting_fact_mapping": {
+        "total": 0,
+        "matched": 0,
+        "unmatched": 0,
+        "success_rate": null
+      },
+      "field_sets": [
+        {
+          "fields": [
+            "_id",
+            "answer",
+            "answer_id",
+            "context",
+            "entity_ids",
+            "evidences",
+            "evidences_id",
+            "question",
+            "supporting_facts",
+            "type"
+          ],
+          "count": 12576
+        }
+      ],
+      "missing_field_counts": {},
+      "null_field_counts": {},
+      "empty_field_counts": {
+        "answer": 12576,
+        "answer_id": 12576,
+        "entity_ids": 12576,
+        "evidences": 12576,
+        "evidences_id": 12576,
+        "supporting_facts": 12576
+      },
+      "invalid_example_count": 0,
+      "issue_counts": {},
+      "issue_examples_first_20": [],
+      "correctness_evaluation_available": false,
+      "evaluation_eligibility_counts": {
+        "qa_valid": 0,
+        "evidence_valid": 0,
+        "qa_excluded": 12576,
+        "evidence_excluded": 12576
+      },
+      "qa_exclusion_question_counts_by_reason": {
+        "unlabeled_official_test": 12576
+      },
+      "evidence_exclusion_question_counts_by_reason": {
+        "unlabeled_official_test": 12576
+      }
+    }
+  },
+  "valid": false
+}

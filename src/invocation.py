@@ -6,7 +6,7 @@ from time import perf_counter
 from .backend import LLMConfig, TEMPERATURES, build_llm
 from .success import MISSING, normalize_success, validate_qa_output
 from .telemetry import ACTIVE_TRACE, STEP_CONTEXT, digest, now
-from .uncertainty import generated_logprobs, nll_from_logprobs
+from .uncertainty import generated_logprobs, nll_from_logprobs, logprobs_coverage
 
 
 def invoke_component(component, prompt, inputs, schema=None, *, step_id=None,
@@ -64,6 +64,11 @@ def invoke_component(component, prompt, inputs, schema=None, *, step_id=None,
         event["nll"]["reported_output_token_count"] = raw.response_metadata.get("eval_count")
         event["nll"]["token_count_matches_usage"] = (len(values) == raw.response_metadata["eval_count"]
             if values is not None and raw.response_metadata.get("eval_count") is not None else None)
+        coverage = logprobs_coverage(raw.response_metadata, raw.content)
+        event.update(coverage)
+        event["nll"].update(coverage_status=coverage["coverage_status"],
+                             coverage_ratio=coverage["coverage_ratio"],
+                             evaluated_scope="returned_generated_tokens_only")
         if parsing_error is not None:
             raise parsing_error
         if schema is not None and config.backend == "ollama":

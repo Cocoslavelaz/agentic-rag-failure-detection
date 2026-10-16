@@ -14,6 +14,8 @@ from agents.plan_executor import build_plan_executor
 from agents.plan import plan_agent
 from src.backend import LLMConfig
 from src.telemetry import trajectory_context
+from src.dataset_io import question_fields
+from src.assets import local_embedding_path, corpus_store_path
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -29,16 +31,18 @@ def plan_executor_node(state: GraphState):
 
 if __name__ == "__main__":
     args = parse_args()
+    dataset = load_dataset(name=args.dataset, path=args.dataset_path)
+    model_name_or_path = str(local_embedding_path(args.embedding_path))
+    corpus_store_path(args.corpus_store)
     
-    model_name_or_path = 'hf/gte-multilingual-base'
-    tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
-    model = AutoModel.from_pretrained(model_name_or_path, trust_remote_code=True)
-    model = model.to(f"cuda:{args.gpus[0]}")
+    tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, local_files_only=True)
+    model = AutoModel.from_pretrained(model_name_or_path, trust_remote_code=True, local_files_only=True)
+    model = model.to(args.embedding_device)
 
-    retrieve = Retriever(gpu_ids=args.gpus)
-    retrieve.init_index_and_add(root_dir="save_embs/gte-ml-base", dataset_name="dpr100")
+    retrieve = Retriever(gpu_ids=args.gpus, device=args.faiss_device)
+    retrieve.init_index_and_add(root_dir=args.index_root, dataset_name=args.index_prefix)
 
-    dpr100_corpus = load_corpus()
+    dpr100_corpus = load_corpus(store_path=args.corpus_store)
     retriever_tool = RetrieveTopChunk(tokenizer=tokenizer, embedding_model=model, retrieval_model=retrieve, corpus=dpr100_corpus)
     
     global plan_executor_agent
@@ -57,7 +61,6 @@ if __name__ == "__main__":
     exp_name = args.exp
     model = args.model
     dataset_name = args.dataset
-    dataset = load_dataset(name=dataset_name)
     
     c = 0
     llm_config = LLMConfig.from_env()
@@ -66,15 +69,15 @@ if __name__ == "__main__":
     for id, item in enumerate(dataset):
         if id < args.start_index or id > args.end_index:
             continue
-        question_id = item["id"]
+        question_id, question_text = question_fields(item, args.dataset_format)
         print(question_id)
         save_file = os.path.join(save_dir, f"{question_id}.json")
         if os.path.exists(save_file):
             continue
         if dataset_name == "fever":
-            question = f"Verify this claim, answer SUPPORTS or REFUTES\n{item['input']}"
+            question = f"Verify this claim, answer SUPPORTS or REFUTES\n{question_text}"
         else:
-            question = item["input"]
+            question = question_text
         inputs = {
             "original_question": f"{question}?"
         }

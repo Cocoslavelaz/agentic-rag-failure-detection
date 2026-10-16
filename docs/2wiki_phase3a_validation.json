@@ -1,0 +1,1781 @@
+{
+  "test_type": "real_model_integration",
+  "scope": "Phase 3A smoke engineering only, not retrieval-quality evaluation",
+  "encoder_config": {
+    "model_id": "Alibaba-NLP/gte-multilingual-base",
+    "model_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+    "tokenizer_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+    "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+    "pooling": "cls_last_hidden_state",
+    "dimension": 768,
+    "document_max_length": 512,
+    "query_max_length": 512,
+    "normalize": true,
+    "model_dtype": "float32",
+    "output_dtype": "float32",
+    "attention_implementation": "sdpa",
+    "batch_size": 8,
+    "seed": 43,
+    "device": "cpu",
+    "cpu_threads": 4
+  },
+  "encoder_config_hash": "69ba38882ab9878a0d7e3ac3e62a177670c61a18423dff3f5346fddbd0f2ae86",
+  "model_lock_sha256": "19c7e018cd1bf07b9f0b301897481402b8f809ab76820b46b8591975a6566e3b",
+  "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+  "corpus_manifest_hash": "7b4271ded005a7d0ab15390a5ac46c514378b93050be4604d529e72300aa91a3",
+  "output_directory": "D:\\school\\研究所\\碩論\\paper_codes\\MA-RAG\\artifacts\\2wiki\\2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72\\69ba38882ab9878a0d7e3ac3e62a177670c61a18423dff3f5346fddbd0f2ae86\\smoke\\ff05fe65276cb06d13374af1763068141ec7d4379f8b0a107866dcb04cb07f19",
+  "document_encoding": {
+    "role": "documents",
+    "count": 128,
+    "max_length": 512,
+    "truncated_count": 1,
+    "token_length_quantiles": {
+      "0": 10.0,
+      "50": 60.5,
+      "95": 261.0999999999999,
+      "100": 541.0
+    },
+    "seconds_including_tokenization": 38.77734889998101,
+    "texts_per_second": 3.3008961063880955,
+    "device_resolution": {
+      "requested": "cpu",
+      "resolved": "cpu",
+      "fallback_reason": null
+    },
+    "finite": true,
+    "norm_min": 0.9999998901192347,
+    "norm_max": 1.000000100648358
+  },
+  "query_encoding": {
+    "role": "queries",
+    "count": 5,
+    "max_length": 512,
+    "truncated_count": 0,
+    "token_length_quantiles": {
+      "0": 14.0,
+      "50": 20.0,
+      "95": 23.4,
+      "100": 24.0
+    },
+    "seconds_including_tokenization": 0.24550560000352561,
+    "texts_per_second": 20.366134214161292,
+    "device_resolution": {
+      "requested": "cpu",
+      "resolved": "cpu",
+      "fallback_reason": null
+    },
+    "finite": true,
+    "norm_min": 0.999999975118998,
+    "norm_max": 1.0000000640305873
+  },
+  "cosine_verification": {
+    "comparisons": [
+      {
+        "absolute_error": 3.483520150115993e-08,
+        "faiss_raw_score": 0.6217153668403625,
+        "numpy_float64_cosine": 0.621715401675564,
+        "row_id": 59
+      },
+      {
+        "absolute_error": 8.956130104209592e-08,
+        "faiss_raw_score": 0.5378792881965637,
+        "numpy_float64_cosine": 0.5378793777578648,
+        "row_id": 21
+      },
+      {
+        "absolute_error": 3.1957620327816016e-08,
+        "faiss_raw_score": 0.5362129211425781,
+        "numpy_float64_cosine": 0.5362128891849578,
+        "row_id": 55
+      },
+      {
+        "absolute_error": 5.998649810212697e-08,
+        "faiss_raw_score": 0.5316735506057739,
+        "numpy_float64_cosine": 0.531673610592272,
+        "row_id": 126
+      },
+      {
+        "absolute_error": 4.5087091060658224e-08,
+        "faiss_raw_score": 0.5259764194488525,
+        "numpy_float64_cosine": 0.5259763743617615,
+        "row_id": 123
+      },
+      {
+        "absolute_error": 2.0953883073104862e-08,
+        "faiss_raw_score": 0.5143499374389648,
+        "numpy_float64_cosine": 0.5143499164850818,
+        "row_id": 78
+      },
+      {
+        "absolute_error": 1.2775087099292648e-08,
+        "faiss_raw_score": 0.5097657442092896,
+        "numpy_float64_cosine": 0.5097657569843767,
+        "row_id": 13
+      },
+      {
+        "absolute_error": 1.4471154941020359e-08,
+        "faiss_raw_score": 0.5057801008224487,
+        "numpy_float64_cosine": 0.5057800863512938,
+        "row_id": 45
+      },
+      {
+        "absolute_error": 6.757827897274638e-08,
+        "faiss_raw_score": 0.5010713338851929,
+        "numpy_float64_cosine": 0.5010714014634718,
+        "row_id": 26
+      },
+      {
+        "absolute_error": 4.943242354338295e-08,
+        "faiss_raw_score": 0.4977865517139435,
+        "numpy_float64_cosine": 0.497786601146367,
+        "row_id": 5
+      },
+      {
+        "absolute_error": 3.81230895740714e-08,
+        "faiss_raw_score": 0.5278754234313965,
+        "numpy_float64_cosine": 0.5278754615544861,
+        "row_id": 32
+      },
+      {
+        "absolute_error": 1.7764526849539664e-08,
+        "faiss_raw_score": 0.5016475915908813,
+        "numpy_float64_cosine": 0.5016475738263545,
+        "row_id": 45
+      },
+      {
+        "absolute_error": 9.567311387570498e-09,
+        "faiss_raw_score": 0.49247246980667114,
+        "numpy_float64_cosine": 0.49247247937398253,
+        "row_id": 87
+      },
+      {
+        "absolute_error": 3.315615748622491e-08,
+        "faiss_raw_score": 0.48929083347320557,
+        "numpy_float64_cosine": 0.4892908003170481,
+        "row_id": 27
+      },
+      {
+        "absolute_error": 2.4976905155238427e-08,
+        "faiss_raw_score": 0.4788750112056732,
+        "numpy_float64_cosine": 0.4788750361825784,
+        "row_id": 72
+      },
+      {
+        "absolute_error": 4.764379279986741e-09,
+        "faiss_raw_score": 0.4783112406730652,
+        "numpy_float64_cosine": 0.4783112359086859,
+        "row_id": 123
+      },
+      {
+        "absolute_error": 4.486139976167536e-08,
+        "faiss_raw_score": 0.4725315570831299,
+        "numpy_float64_cosine": 0.4725315122217301,
+        "row_id": 12
+      },
+      {
+        "absolute_error": 6.486051751242172e-09,
+        "faiss_raw_score": 0.46532997488975525,
+        "numpy_float64_cosine": 0.465329981375807,
+        "row_id": 36
+      },
+      {
+        "absolute_error": 9.855857685536762e-09,
+        "faiss_raw_score": 0.4627380669116974,
+        "numpy_float64_cosine": 0.4627380767675551,
+        "row_id": 26
+      },
+      {
+        "absolute_error": 1.1843272473832656e-09,
+        "faiss_raw_score": 0.46190229058265686,
+        "numpy_float64_cosine": 0.4619022917669841,
+        "row_id": 83
+      },
+      {
+        "absolute_error": 1.8731939110949725e-08,
+        "faiss_raw_score": 0.49811768531799316,
+        "numpy_float64_cosine": 0.49811766658605405,
+        "row_id": 7
+      },
+      {
+        "absolute_error": 1.7885258440930585e-08,
+        "faiss_raw_score": 0.4680395722389221,
+        "numpy_float64_cosine": 0.4680395543536637,
+        "row_id": 101
+      },
+      {
+        "absolute_error": 3.5452014268688714e-08,
+        "faiss_raw_score": 0.46646997332572937,
+        "numpy_float64_cosine": 0.4664699378737151,
+        "row_id": 82
+      },
+      {
+        "absolute_error": 6.315737638429297e-08,
+        "faiss_raw_score": 0.4460076689720154,
+        "numpy_float64_cosine": 0.446007605814639,
+        "row_id": 22
+      },
+      {
+        "absolute_error": 1.2828927531405299e-08,
+        "faiss_raw_score": 0.4453255832195282,
+        "numpy_float64_cosine": 0.44532557039060067,
+        "row_id": 68
+      },
+      {
+        "absolute_error": 2.5797716407538474e-08,
+        "faiss_raw_score": 0.4445337653160095,
+        "numpy_float64_cosine": 0.4445337395182931,
+        "row_id": 125
+      },
+      {
+        "absolute_error": 3.2008548589423924e-08,
+        "faiss_raw_score": 0.4399036169052124,
+        "numpy_float64_cosine": 0.4399035848966638,
+        "row_id": 2
+      },
+      {
+        "absolute_error": 4.174163792391994e-10,
+        "faiss_raw_score": 0.42956310510635376,
+        "numpy_float64_cosine": 0.4295631046889374,
+        "row_id": 90
+      },
+      {
+        "absolute_error": 3.176096641244186e-08,
+        "faiss_raw_score": 0.4286050498485565,
+        "numpy_float64_cosine": 0.4286050180875901,
+        "row_id": 0
+      },
+      {
+        "absolute_error": 7.57696178022016e-09,
+        "faiss_raw_score": 0.4236319065093994,
+        "numpy_float64_cosine": 0.42363189893243763,
+        "row_id": 116
+      },
+      {
+        "absolute_error": 4.859310731575306e-10,
+        "faiss_raw_score": 0.5430681109428406,
+        "numpy_float64_cosine": 0.5430681104569095,
+        "row_id": 32
+      },
+      {
+        "absolute_error": 5.573614092480028e-08,
+        "faiss_raw_score": 0.5335143208503723,
+        "numpy_float64_cosine": 0.5335143765865132,
+        "row_id": 72
+      },
+      {
+        "absolute_error": 2.3045236052787743e-08,
+        "faiss_raw_score": 0.5267947912216187,
+        "numpy_float64_cosine": 0.5267947681763826,
+        "row_id": 36
+      },
+      {
+        "absolute_error": 2.4502776030388418e-08,
+        "faiss_raw_score": 0.5249906182289124,
+        "numpy_float64_cosine": 0.5249906427316884,
+        "row_id": 26
+      },
+      {
+        "absolute_error": 2.4729379988208677e-08,
+        "faiss_raw_score": 0.5198260545730591,
+        "numpy_float64_cosine": 0.5198260298436791,
+        "row_id": 77
+      },
+      {
+        "absolute_error": 1.4005875459410788e-08,
+        "faiss_raw_score": 0.5165393352508545,
+        "numpy_float64_cosine": 0.51653934925673,
+        "row_id": 21
+      },
+      {
+        "absolute_error": 6.450037060012903e-09,
+        "faiss_raw_score": 0.515802800655365,
+        "numpy_float64_cosine": 0.515802807105402,
+        "row_id": 20
+      },
+      {
+        "absolute_error": 2.902044482500088e-08,
+        "faiss_raw_score": 0.4958187937736511,
+        "numpy_float64_cosine": 0.49581882279409595,
+        "row_id": 119
+      },
+      {
+        "absolute_error": 3.162273565227025e-08,
+        "faiss_raw_score": 0.4856509268283844,
+        "numpy_float64_cosine": 0.48565089520564875,
+        "row_id": 13
+      },
+      {
+        "absolute_error": 3.871626680362894e-08,
+        "faiss_raw_score": 0.48411476612091064,
+        "numpy_float64_cosine": 0.48411480483717745,
+        "row_id": 93
+      },
+      {
+        "absolute_error": 7.565861870340029e-08,
+        "faiss_raw_score": 0.5226664543151855,
+        "numpy_float64_cosine": 0.5226663786565668,
+        "row_id": 13
+      },
+      {
+        "absolute_error": 9.768775510732297e-08,
+        "faiss_raw_score": 0.5175131559371948,
+        "numpy_float64_cosine": 0.5175132536249499,
+        "row_id": 72
+      },
+      {
+        "absolute_error": 8.099372617031975e-09,
+        "faiss_raw_score": 0.5133711695671082,
+        "numpy_float64_cosine": 0.5133711776664808,
+        "row_id": 21
+      },
+      {
+        "absolute_error": 1.245956626760858e-08,
+        "faiss_raw_score": 0.5105965733528137,
+        "numpy_float64_cosine": 0.5105965608932475,
+        "row_id": 59
+      },
+      {
+        "absolute_error": 3.326111541746002e-08,
+        "faiss_raw_score": 0.5016491413116455,
+        "numpy_float64_cosine": 0.5016491080505301,
+        "row_id": 20
+      },
+      {
+        "absolute_error": 1.3508270280127022e-08,
+        "faiss_raw_score": 0.4970397353172302,
+        "numpy_float64_cosine": 0.4970397488255005,
+        "row_id": 34
+      },
+      {
+        "absolute_error": 3.8053584672237406e-08,
+        "faiss_raw_score": 0.48941320180892944,
+        "numpy_float64_cosine": 0.48941316375534477,
+        "row_id": 60
+      },
+      {
+        "absolute_error": 1.568341440050247e-08,
+        "faiss_raw_score": 0.4861636161804199,
+        "numpy_float64_cosine": 0.4861636004970055,
+        "row_id": 32
+      },
+      {
+        "absolute_error": 3.373986867671874e-08,
+        "faiss_raw_score": 0.4860244691371918,
+        "numpy_float64_cosine": 0.4860244353973231,
+        "row_id": 45
+      },
+      {
+        "absolute_error": 3.0740631040693245e-08,
+        "faiss_raw_score": 0.4857013523578644,
+        "numpy_float64_cosine": 0.48570132161723334,
+        "row_id": 27
+      }
+    ],
+    "max_absolute_error": 9.768775510732297e-08,
+    "tie_policy": "do not reorder FAISS; equal cosine ties may have different row ordering",
+    "tolerance": 1e-05,
+    "topk_consistent_within_tolerance": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "topk_exact_row_order_match": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "verified": true
+  },
+  "query_selection": "first five original dev questions, only ID and question text read into retrieval inputs",
+  "top10_retrieval_samples": [
+    {
+      "question_id": "8813f87c0bdd11eba7f7acde48001122",
+      "query": "Who is the mother of the director of film Polish-Russian War (Film)?",
+      "retrieval": {
+        "query": "Who is the mother of the director of film Polish-Russian War (Film)?",
+        "query_embedding_configuration": {
+          "model_id": "Alibaba-NLP/gte-multilingual-base",
+          "model_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "tokenizer_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+          "pooling": "cls_last_hidden_state",
+          "dimension": 768,
+          "document_max_length": 512,
+          "query_max_length": 512,
+          "normalize": true,
+          "model_dtype": "float32",
+          "output_dtype": "float32",
+          "attention_implementation": "sdpa",
+          "batch_size": 8,
+          "seed": 43,
+          "device": "cpu",
+          "cpu_threads": 4
+        },
+        "retrieval_occurred": true,
+        "retrieval_mask": true,
+        "missingness_reason": null,
+        "index_scope": "smoke",
+        "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+        "top_k_requested": 10,
+        "top_k_returned": 10,
+        "actual_returned_k": 10,
+        "ordered_document_ids": [
+          "2wiki-v1:73316eec6545062aed7bd60cc03fb256622906c81720d4f204c827e645bbdf5d",
+          "2wiki-v1:310ce41175a9bc32f3d4cbbcd88e544926eb5c4eccc248b1a9fc5d11505c88bc",
+          "2wiki-v1:6ffcc14e74a38192a464c616baf4ebfd4d27b32cb22b91708532f4e9e5c83a48",
+          "2wiki-v1:fe0b65c1fe7caf532c0cb52b7a1d51b9527c41f1333656193f7f54ba5e96ccb1",
+          "2wiki-v1:fac356a3e0b97bb3204830ccd7fb91749db8768b01ab0af35c62a21ab5e86ccc",
+          "2wiki-v1:a5e0acf3c53a34d377077f2106bfd3b0ff8009238c9993dd964a46ba6821c7ac",
+          "2wiki-v1:1bcc99902ade617610d749b2c29ad3894791fe249152f0ad70e9101ea9e7e111",
+          "2wiki-v1:664909c0d385096c9ecf468653f8dbbd15559533c04de8c0d3e0895c54ad16fd",
+          "2wiki-v1:3a9f8e2028a1eb81cdd44264aecd639b6eaebe9d0cad4501cc37255462cdbd70",
+          "2wiki-v1:0e202185c644e90ef2b7817caa41770e9e5b074513a5f3b2b0b8ec73f008a9e0"
+        ],
+        "raw_faiss_scores": [
+          0.6217153668403625,
+          0.5378793478012085,
+          0.5362129211425781,
+          0.5316736698150635,
+          0.5259764194488525,
+          0.5143499374389648,
+          0.5097658038139343,
+          0.5057801008224487,
+          0.5010714530944824,
+          0.4977865517139435
+        ],
+        "cosine_similarities": [
+          0.6217153668403625,
+          0.5378793478012085,
+          0.5362129211425781,
+          0.5316736698150635,
+          0.5259764194488525,
+          0.5143499374389648,
+          0.5097658038139343,
+          0.5057801008224487,
+          0.5010714530944824,
+          0.4977865517139435
+        ],
+        "faiss_device": "cpu",
+        "document_norms_verified": true,
+        "query_norms_verified": true,
+        "faiss_hits": [
+          {
+            "document_id": "2wiki-v1:73316eec6545062aed7bd60cc03fb256622906c81720d4f204c827e645bbdf5d",
+            "rank": 1,
+            "raw_score": 0.6217153668403625,
+            "row_id": 59,
+            "title": "The Pianist (2002 film)"
+          },
+          {
+            "document_id": "2wiki-v1:310ce41175a9bc32f3d4cbbcd88e544926eb5c4eccc248b1a9fc5d11505c88bc",
+            "rank": 2,
+            "raw_score": 0.5378793478012085,
+            "row_id": 21,
+            "title": "Paul Weitz (filmmaker)"
+          },
+          {
+            "document_id": "2wiki-v1:6ffcc14e74a38192a464c616baf4ebfd4d27b32cb22b91708532f4e9e5c83a48",
+            "rank": 3,
+            "raw_score": 0.5362129211425781,
+            "row_id": 55,
+            "title": "Marya Chéliga-Loevy"
+          },
+          {
+            "document_id": "2wiki-v1:fe0b65c1fe7caf532c0cb52b7a1d51b9527c41f1333656193f7f54ba5e96ccb1",
+            "rank": 4,
+            "raw_score": 0.5316736698150635,
+            "row_id": 126,
+            "title": "Cléo from 5 to 7"
+          },
+          {
+            "document_id": "2wiki-v1:fac356a3e0b97bb3204830ccd7fb91749db8768b01ab0af35c62a21ab5e86ccc",
+            "rank": 5,
+            "raw_score": 0.5259764194488525,
+            "row_id": 123,
+            "title": "The Sino-Japanese War at Sea 1894"
+          },
+          {
+            "document_id": "2wiki-v1:a5e0acf3c53a34d377077f2106bfd3b0ff8009238c9993dd964a46ba6821c7ac",
+            "rank": 6,
+            "raw_score": 0.5143499374389648,
+            "row_id": 78,
+            "title": "Dissolved and Effused"
+          },
+          {
+            "document_id": "2wiki-v1:1bcc99902ade617610d749b2c29ad3894791fe249152f0ad70e9101ea9e7e111",
+            "rank": 7,
+            "raw_score": 0.5097658038139343,
+            "row_id": 13,
+            "title": "Clio Barnard"
+          },
+          {
+            "document_id": "2wiki-v1:664909c0d385096c9ecf468653f8dbbd15559533c04de8c0d3e0895c54ad16fd",
+            "rank": 8,
+            "raw_score": 0.5057801008224487,
+            "row_id": 45,
+            "title": "Jean-Jacques Beineix"
+          },
+          {
+            "document_id": "2wiki-v1:3a9f8e2028a1eb81cdd44264aecd639b6eaebe9d0cad4501cc37255462cdbd70",
+            "rank": 9,
+            "raw_score": 0.5010714530944824,
+            "row_id": 26,
+            "title": "Jag Mundhra"
+          },
+          {
+            "document_id": "2wiki-v1:0e202185c644e90ef2b7817caa41770e9e5b074513a5f3b2b0b8ec73f008a9e0",
+            "rank": 10,
+            "raw_score": 0.4977865517139435,
+            "row_id": 5,
+            "title": "The Convict of Cayenne"
+          }
+        ],
+        "missing_rows": [],
+        "cosine_validation": {
+          "comparisons": [
+            {
+              "absolute_error": 2.8212988389952898e-08,
+              "faiss_raw_score": 0.6217153668403625,
+              "numpy_float64_cosine": 0.6217153950533509,
+              "row_id": 59
+            },
+            {
+              "absolute_error": 7.976851512658811e-09,
+              "faiss_raw_score": 0.5378793478012085,
+              "numpy_float64_cosine": 0.53787935577806,
+              "row_id": 21
+            },
+            {
+              "absolute_error": 1.386348569276663e-08,
+              "faiss_raw_score": 0.5362129211425781,
+              "numpy_float64_cosine": 0.5362129072790924,
+              "row_id": 55
+            },
+            {
+              "absolute_error": 3.817455185295415e-08,
+              "faiss_raw_score": 0.5316736698150635,
+              "numpy_float64_cosine": 0.5316736316405116,
+              "row_id": 126
+            },
+            {
+              "absolute_error": 4.867624403548376e-08,
+              "faiss_raw_score": 0.5259764194488525,
+              "numpy_float64_cosine": 0.5259763707726085,
+              "row_id": 123
+            },
+            {
+              "absolute_error": 1.028920881829265e-08,
+              "faiss_raw_score": 0.5143499374389648,
+              "numpy_float64_cosine": 0.514349927149756,
+              "row_id": 78
+            },
+            {
+              "absolute_error": 9.51990963837801e-09,
+              "faiss_raw_score": 0.5097658038139343,
+              "numpy_float64_cosine": 0.5097657942940247,
+              "row_id": 13
+            },
+            {
+              "absolute_error": 1.2251789471839913e-08,
+              "faiss_raw_score": 0.5057801008224487,
+              "numpy_float64_cosine": 0.5057800885706593,
+              "row_id": 45
+            },
+            {
+              "absolute_error": 1.823620554564087e-08,
+              "faiss_raw_score": 0.5010714530944824,
+              "numpy_float64_cosine": 0.5010714348582769,
+              "row_id": 26
+            },
+            {
+              "absolute_error": 2.7233053701003485e-08,
+              "faiss_raw_score": 0.4977865517139435,
+              "numpy_float64_cosine": 0.4977865789469972,
+              "row_id": 5
+            }
+          ],
+          "max_absolute_error": 4.867624403548376e-08,
+          "tie_policy": "do not reorder FAISS; equal cosine ties may have different row ordering",
+          "tolerance": 1e-05,
+          "topk_consistent_within_tolerance": [
+            true
+          ],
+          "topk_exact_row_order_match": [
+            true
+          ],
+          "verified": true
+        },
+        "top1_uncertainty": 0.37828463315963745,
+        "topk_mean_uncertainty": 0.47177884280681615,
+        "score_margin": 0.08383601903915405,
+        "similarity_validity_status": "cosine_verified"
+      }
+    },
+    {
+      "question_id": "61a46987092f11ebbdaeac1f6bf848b6",
+      "query": "Which film came out first, Blind Shaft or The Mask Of Fu Manchu?",
+      "retrieval": {
+        "query": "Which film came out first, Blind Shaft or The Mask Of Fu Manchu?",
+        "query_embedding_configuration": {
+          "model_id": "Alibaba-NLP/gte-multilingual-base",
+          "model_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "tokenizer_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+          "pooling": "cls_last_hidden_state",
+          "dimension": 768,
+          "document_max_length": 512,
+          "query_max_length": 512,
+          "normalize": true,
+          "model_dtype": "float32",
+          "output_dtype": "float32",
+          "attention_implementation": "sdpa",
+          "batch_size": 8,
+          "seed": 43,
+          "device": "cpu",
+          "cpu_threads": 4
+        },
+        "retrieval_occurred": true,
+        "retrieval_mask": true,
+        "missingness_reason": null,
+        "index_scope": "smoke",
+        "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+        "top_k_requested": 10,
+        "top_k_returned": 10,
+        "actual_returned_k": 10,
+        "ordered_document_ids": [
+          "2wiki-v1:42bec240c6e1e35207823333119a8af722cf8d6db31f5f4d7d40bf5730742c43",
+          "2wiki-v1:664909c0d385096c9ecf468653f8dbbd15559533c04de8c0d3e0895c54ad16fd",
+          "2wiki-v1:b6af8bea4b3d4e9bd27759621472e2105b6bc7a29f816f81258f8381ea239751",
+          "2wiki-v1:3c58844f4f5ab0bc66cc26046bb6e7f05d6a3b5858a61b2ce1c377cb26b754f9",
+          "2wiki-v1:9422c6ac4e0954af767f8f85bb116d9381ba42c44456064f0a63b87ca20fad67",
+          "2wiki-v1:fac356a3e0b97bb3204830ccd7fb91749db8768b01ab0af35c62a21ab5e86ccc",
+          "2wiki-v1:196b8a3a29fcefa8bfb77f0da45c3578c78715122844929c7c0e617eacc96bea",
+          "2wiki-v1:49e16fbf0e8035886158450bfd607e6a2185903f13fd83aae982faf1c434a9aa",
+          "2wiki-v1:3a9f8e2028a1eb81cdd44264aecd639b6eaebe9d0cad4501cc37255462cdbd70",
+          "2wiki-v1:aad4fb65b382d49cc5277b849a84bb3641f4256864dfeca701db0cc8ca2eb3bb"
+        ],
+        "raw_faiss_scores": [
+          0.5278754234313965,
+          0.5016475915908813,
+          0.49247244000434875,
+          0.4892907738685608,
+          0.47887498140335083,
+          0.478311151266098,
+          0.4725315570831299,
+          0.46532994508743286,
+          0.462738037109375,
+          0.4619022011756897
+        ],
+        "cosine_similarities": [
+          0.5278754234313965,
+          0.5016475915908813,
+          0.49247244000434875,
+          0.4892907738685608,
+          0.47887498140335083,
+          0.478311151266098,
+          0.4725315570831299,
+          0.46532994508743286,
+          0.462738037109375,
+          0.4619022011756897
+        ],
+        "faiss_device": "cpu",
+        "document_norms_verified": true,
+        "query_norms_verified": true,
+        "faiss_hits": [
+          {
+            "document_id": "2wiki-v1:42bec240c6e1e35207823333119a8af722cf8d6db31f5f4d7d40bf5730742c43",
+            "rank": 1,
+            "raw_score": 0.5278754234313965,
+            "row_id": 32,
+            "title": "Reign Behind a Curtain"
+          },
+          {
+            "document_id": "2wiki-v1:664909c0d385096c9ecf468653f8dbbd15559533c04de8c0d3e0895c54ad16fd",
+            "rank": 2,
+            "raw_score": 0.5016475915908813,
+            "row_id": 45,
+            "title": "Jean-Jacques Beineix"
+          },
+          {
+            "document_id": "2wiki-v1:b6af8bea4b3d4e9bd27759621472e2105b6bc7a29f816f81258f8381ea239751",
+            "rank": 3,
+            "raw_score": 0.49247244000434875,
+            "row_id": 87,
+            "title": "King of Gamblers"
+          },
+          {
+            "document_id": "2wiki-v1:3c58844f4f5ab0bc66cc26046bb6e7f05d6a3b5858a61b2ce1c377cb26b754f9",
+            "rank": 4,
+            "raw_score": 0.4892907738685608,
+            "row_id": 27,
+            "title": "The Black Arrow (film)"
+          },
+          {
+            "document_id": "2wiki-v1:9422c6ac4e0954af767f8f85bb116d9381ba42c44456064f0a63b87ca20fad67",
+            "rank": 5,
+            "raw_score": 0.47887498140335083,
+            "row_id": 72,
+            "title": "Whoever Slew Auntie Roo?"
+          },
+          {
+            "document_id": "2wiki-v1:fac356a3e0b97bb3204830ccd7fb91749db8768b01ab0af35c62a21ab5e86ccc",
+            "rank": 6,
+            "raw_score": 0.478311151266098,
+            "row_id": 123,
+            "title": "The Sino-Japanese War at Sea 1894"
+          },
+          {
+            "document_id": "2wiki-v1:196b8a3a29fcefa8bfb77f0da45c3578c78715122844929c7c0e617eacc96bea",
+            "rank": 7,
+            "raw_score": 0.4725315570831299,
+            "row_id": 12,
+            "title": "Montreal Assault"
+          },
+          {
+            "document_id": "2wiki-v1:49e16fbf0e8035886158450bfd607e6a2185903f13fd83aae982faf1c434a9aa",
+            "rank": 8,
+            "raw_score": 0.46532994508743286,
+            "row_id": 36,
+            "title": "The Fabulous Baker Boys (Motion Picture Soundtrack)"
+          },
+          {
+            "document_id": "2wiki-v1:3a9f8e2028a1eb81cdd44264aecd639b6eaebe9d0cad4501cc37255462cdbd70",
+            "rank": 9,
+            "raw_score": 0.462738037109375,
+            "row_id": 26,
+            "title": "Jag Mundhra"
+          },
+          {
+            "document_id": "2wiki-v1:aad4fb65b382d49cc5277b849a84bb3641f4256864dfeca701db0cc8ca2eb3bb",
+            "rank": 10,
+            "raw_score": 0.4619022011756897,
+            "row_id": 83,
+            "title": "Twist Around the Clock"
+          }
+        ],
+        "missing_rows": [],
+        "cosine_validation": {
+          "comparisons": [
+            {
+              "absolute_error": 5.017633752935069e-08,
+              "faiss_raw_score": 0.5278754234313965,
+              "numpy_float64_cosine": 0.527875373255059,
+              "row_id": 32
+            },
+            {
+              "absolute_error": 4.557449306830108e-08,
+              "faiss_raw_score": 0.5016475915908813,
+              "numpy_float64_cosine": 0.5016475460163883,
+              "row_id": 45
+            },
+            {
+              "absolute_error": 4.066104114519575e-08,
+              "faiss_raw_score": 0.49247244000434875,
+              "numpy_float64_cosine": 0.4924723993433076,
+              "row_id": 87
+            },
+            {
+              "absolute_error": 3.4463162490450117e-08,
+              "faiss_raw_score": 0.4892907738685608,
+              "numpy_float64_cosine": 0.4892907394053983,
+              "row_id": 27
+            },
+            {
+              "absolute_error": 2.751944061518685e-09,
+              "faiss_raw_score": 0.47887498140335083,
+              "numpy_float64_cosine": 0.4788749841552949,
+              "row_id": 72
+            },
+            {
+              "absolute_error": 2.483713662515541e-08,
+              "faiss_raw_score": 0.478311151266098,
+              "numpy_float64_cosine": 0.4783111264289614,
+              "row_id": 123
+            },
+            {
+              "absolute_error": 7.832255344286665e-08,
+              "faiss_raw_score": 0.4725315570831299,
+              "numpy_float64_cosine": 0.47253147876057644,
+              "row_id": 12
+            },
+            {
+              "absolute_error": 6.154964021787279e-08,
+              "faiss_raw_score": 0.46532994508743286,
+              "numpy_float64_cosine": 0.46532988353779264,
+              "row_id": 36
+            },
+            {
+              "absolute_error": 2.6145532516785863e-08,
+              "faiss_raw_score": 0.462738037109375,
+              "numpy_float64_cosine": 0.4627380109638425,
+              "row_id": 26
+            },
+            {
+              "absolute_error": 6.9206737007831975e-09,
+              "faiss_raw_score": 0.4619022011756897,
+              "numpy_float64_cosine": 0.461902194255016,
+              "row_id": 83
+            }
+          ],
+          "max_absolute_error": 7.832255344286665e-08,
+          "tie_policy": "do not reorder FAISS; equal cosine ties may have different row ordering",
+          "tolerance": 1e-05,
+          "topk_consistent_within_tolerance": [
+            true
+          ],
+          "topk_exact_row_order_match": [
+            true
+          ],
+          "verified": true
+        },
+        "top1_uncertainty": 0.4721245765686035,
+        "topk_mean_uncertainty": 0.5169025897979737,
+        "score_margin": 0.026227831840515137,
+        "similarity_validity_status": "cosine_verified"
+      }
+    },
+    {
+      "question_id": "e2a3bf2a0bdd11eba7f7acde48001122",
+      "query": "When did John V, Prince Of Anhalt-Zerbst's father die?",
+      "retrieval": {
+        "query": "When did John V, Prince Of Anhalt-Zerbst's father die?",
+        "query_embedding_configuration": {
+          "model_id": "Alibaba-NLP/gte-multilingual-base",
+          "model_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "tokenizer_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+          "pooling": "cls_last_hidden_state",
+          "dimension": 768,
+          "document_max_length": 512,
+          "query_max_length": 512,
+          "normalize": true,
+          "model_dtype": "float32",
+          "output_dtype": "float32",
+          "attention_implementation": "sdpa",
+          "batch_size": 8,
+          "seed": 43,
+          "device": "cpu",
+          "cpu_threads": 4
+        },
+        "retrieval_occurred": true,
+        "retrieval_mask": true,
+        "missingness_reason": null,
+        "index_scope": "smoke",
+        "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+        "top_k_requested": 10,
+        "top_k_returned": 10,
+        "actual_returned_k": 10,
+        "ordered_document_ids": [
+          "2wiki-v1:11ce14cf83d4378f9ef583815d5f87b370483633741cad60a47ff80a8ae28d3a",
+          "2wiki-v1:cb4eeee9fb803d5002aa3a5f6758301b93e436c5bf29161d61520c840b7f8b33",
+          "2wiki-v1:a9f0dda8f6d0fe47f9d24dc1dcf26d969081d3756a817e7b35f7587b0df09a70",
+          "2wiki-v1:34b4dea507e914ff9d0783c76c1fb44d54757d0b112b9ac6b5f7870e00e7055c",
+          "2wiki-v1:8f8bbc471da068063b1cf6f371092794d915d0268c95164bb56aa77fc417ec1b",
+          "2wiki-v1:fb9fd0812b9528c4484551680b93d27869e2f9a42e85596bd9e4694461d69206",
+          "2wiki-v1:06863e48802dba01bc33603bb76eb8143333b9b79c22cc77c3a3d735f60ebe55",
+          "2wiki-v1:bac877b73b076a0c00f819dc499a69cd636c169dd43720464e777a4866419642",
+          "2wiki-v1:04826c4ec276fb215272f9428f839378bb089a81ff5757e420d010c8d58e047e",
+          "2wiki-v1:f167a39e7dd60ac0fe30302c11771c85bd9afda227fd98222108f6f8f8e569a1"
+        ],
+        "raw_faiss_scores": [
+          0.4981176555156708,
+          0.4680395722389221,
+          0.46646997332572937,
+          0.446007639169693,
+          0.4453255534172058,
+          0.4445337951183319,
+          0.4399036169052124,
+          0.429563045501709,
+          0.42860499024391174,
+          0.4236319065093994
+        ],
+        "cosine_similarities": [
+          0.4981176555156708,
+          0.4680395722389221,
+          0.46646997332572937,
+          0.446007639169693,
+          0.4453255534172058,
+          0.4445337951183319,
+          0.4399036169052124,
+          0.429563045501709,
+          0.42860499024391174,
+          0.4236319065093994
+        ],
+        "faiss_device": "cpu",
+        "document_norms_verified": true,
+        "query_norms_verified": true,
+        "faiss_hits": [
+          {
+            "document_id": "2wiki-v1:11ce14cf83d4378f9ef583815d5f87b370483633741cad60a47ff80a8ae28d3a",
+            "rank": 1,
+            "raw_score": 0.4981176555156708,
+            "row_id": 7,
+            "title": "Henry Herbert, 10th Earl of Pembroke"
+          },
+          {
+            "document_id": "2wiki-v1:cb4eeee9fb803d5002aa3a5f6758301b93e436c5bf29161d61520c840b7f8b33",
+            "rank": 2,
+            "raw_score": 0.4680395722389221,
+            "row_id": 101,
+            "title": "John Wynne (died 1747)"
+          },
+          {
+            "document_id": "2wiki-v1:a9f0dda8f6d0fe47f9d24dc1dcf26d969081d3756a817e7b35f7587b0df09a70",
+            "rank": 3,
+            "raw_score": 0.46646997332572937,
+            "row_id": 82,
+            "title": "Katherine Mortimer, Countess of Warwick"
+          },
+          {
+            "document_id": "2wiki-v1:34b4dea507e914ff9d0783c76c1fb44d54757d0b112b9ac6b5f7870e00e7055c",
+            "rank": 4,
+            "raw_score": 0.446007639169693,
+            "row_id": 22,
+            "title": "Shayne Gostisbehere"
+          },
+          {
+            "document_id": "2wiki-v1:8f8bbc471da068063b1cf6f371092794d915d0268c95164bb56aa77fc417ec1b",
+            "rank": 5,
+            "raw_score": 0.4453255534172058,
+            "row_id": 68,
+            "title": "Jean-Robert Tyran"
+          },
+          {
+            "document_id": "2wiki-v1:fb9fd0812b9528c4484551680b93d27869e2f9a42e85596bd9e4694461d69206",
+            "rank": 6,
+            "raw_score": 0.4445337951183319,
+            "row_id": 125,
+            "title": "Caracalla"
+          },
+          {
+            "document_id": "2wiki-v1:06863e48802dba01bc33603bb76eb8143333b9b79c22cc77c3a3d735f60ebe55",
+            "rank": 7,
+            "raw_score": 0.4399036169052124,
+            "row_id": 2,
+            "title": "Munjong of Goryeo"
+          },
+          {
+            "document_id": "2wiki-v1:bac877b73b076a0c00f819dc499a69cd636c169dd43720464e777a4866419642",
+            "rank": 8,
+            "raw_score": 0.429563045501709,
+            "row_id": 90,
+            "title": "Ghirmai Ghebremariam"
+          },
+          {
+            "document_id": "2wiki-v1:04826c4ec276fb215272f9428f839378bb089a81ff5757e420d010c8d58e047e",
+            "rank": 9,
+            "raw_score": 0.42860499024391174,
+            "row_id": 0,
+            "title": "Sir William Glynne, 2nd Baronet"
+          },
+          {
+            "document_id": "2wiki-v1:f167a39e7dd60ac0fe30302c11771c85bd9afda227fd98222108f6f8f8e569a1",
+            "rank": 10,
+            "raw_score": 0.4236319065093994,
+            "row_id": 116,
+            "title": "The Testimony of Taliesin Jones"
+          }
+        ],
+        "missing_rows": [],
+        "cosine_validation": {
+          "comparisons": [
+            {
+              "absolute_error": 4.799541430955401e-09,
+              "faiss_raw_score": 0.4981176555156708,
+              "numpy_float64_cosine": 0.49811765071612935,
+              "row_id": 7
+            },
+            {
+              "absolute_error": 2.6158467780756922e-08,
+              "faiss_raw_score": 0.4680395722389221,
+              "numpy_float64_cosine": 0.46803954608045434,
+              "row_id": 101
+            },
+            {
+              "absolute_error": 2.2297752533262383e-09,
+              "faiss_raw_score": 0.46646997332572937,
+              "numpy_float64_cosine": 0.4664699755555046,
+              "row_id": 82
+            },
+            {
+              "absolute_error": 3.7550840048528045e-08,
+              "faiss_raw_score": 0.446007639169693,
+              "numpy_float64_cosine": 0.44600760161885294,
+              "row_id": 22
+            },
+            {
+              "absolute_error": 3.1896690289023866e-08,
+              "faiss_raw_score": 0.4453255534172058,
+              "numpy_float64_cosine": 0.4453255853138961,
+              "row_id": 68
+            },
+            {
+              "absolute_error": 3.734951148359755e-08,
+              "faiss_raw_score": 0.4445337951183319,
+              "numpy_float64_cosine": 0.4445337577688204,
+              "row_id": 125
+            },
+            {
+              "absolute_error": 8.546230390038545e-09,
+              "faiss_raw_score": 0.4399036169052124,
+              "numpy_float64_cosine": 0.439903608358982,
+              "row_id": 2
+            },
+            {
+              "absolute_error": 1.570298341357912e-08,
+              "faiss_raw_score": 0.429563045501709,
+              "numpy_float64_cosine": 0.4295630612046924,
+              "row_id": 90
+            },
+            {
+              "absolute_error": 2.6492807336797597e-08,
+              "faiss_raw_score": 0.42860499024391174,
+              "numpy_float64_cosine": 0.4286050167367191,
+              "row_id": 0
+            },
+            {
+              "absolute_error": 1.3756662087249794e-08,
+              "faiss_raw_score": 0.4236319065093994,
+              "numpy_float64_cosine": 0.4236319202660615,
+              "row_id": 116
+            }
+          ],
+          "max_absolute_error": 3.7550840048528045e-08,
+          "tie_policy": "do not reorder FAISS; equal cosine ties may have different row ordering",
+          "tolerance": 1e-05,
+          "topk_consistent_within_tolerance": [
+            true
+          ],
+          "topk_exact_row_order_match": [
+            true
+          ],
+          "verified": true
+        },
+        "top1_uncertainty": 0.5018823444843292,
+        "topk_mean_uncertainty": 0.5509802252054214,
+        "score_margin": 0.030078083276748657,
+        "similarity_validity_status": "cosine_verified"
+      }
+    },
+    {
+      "question_id": "0cd3bdea0bde11eba7f7acde48001122",
+      "query": "What is the award that the director of film Wearing Velvet Slippers Under A Golden Umbrella won?",
+      "retrieval": {
+        "query": "What is the award that the director of film Wearing Velvet Slippers Under A Golden Umbrella won?",
+        "query_embedding_configuration": {
+          "model_id": "Alibaba-NLP/gte-multilingual-base",
+          "model_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "tokenizer_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+          "pooling": "cls_last_hidden_state",
+          "dimension": 768,
+          "document_max_length": 512,
+          "query_max_length": 512,
+          "normalize": true,
+          "model_dtype": "float32",
+          "output_dtype": "float32",
+          "attention_implementation": "sdpa",
+          "batch_size": 8,
+          "seed": 43,
+          "device": "cpu",
+          "cpu_threads": 4
+        },
+        "retrieval_occurred": true,
+        "retrieval_mask": true,
+        "missingness_reason": null,
+        "index_scope": "smoke",
+        "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+        "top_k_requested": 10,
+        "top_k_returned": 10,
+        "actual_returned_k": 10,
+        "ordered_document_ids": [
+          "2wiki-v1:42bec240c6e1e35207823333119a8af722cf8d6db31f5f4d7d40bf5730742c43",
+          "2wiki-v1:9422c6ac4e0954af767f8f85bb116d9381ba42c44456064f0a63b87ca20fad67",
+          "2wiki-v1:49e16fbf0e8035886158450bfd607e6a2185903f13fd83aae982faf1c434a9aa",
+          "2wiki-v1:3a9f8e2028a1eb81cdd44264aecd639b6eaebe9d0cad4501cc37255462cdbd70",
+          "2wiki-v1:a1febcd489022464845d635c152557ac4d40b6256da46b209e1b90c66d45be29",
+          "2wiki-v1:310ce41175a9bc32f3d4cbbcd88e544926eb5c4eccc248b1a9fc5d11505c88bc",
+          "2wiki-v1:30c33d3506d35dc8c006631210ed324018148c5b4eb3c66f50d464159943d544",
+          "2wiki-v1:f5cf1d3c98c01d30af7cca891e43f7256ddb4948298d7f49e361399d344689c8",
+          "2wiki-v1:1bcc99902ade617610d749b2c29ad3894791fe249152f0ad70e9101ea9e7e111",
+          "2wiki-v1:bdf18f8e810f6d2bd2f930dbbd03b55cb64bdecfae21a349daf5a15a3f53bcbf"
+        ],
+        "raw_faiss_scores": [
+          0.5430680513381958,
+          0.5335142612457275,
+          0.5267946720123291,
+          0.5249905586242676,
+          0.5198259949684143,
+          0.5165392160415649,
+          0.5158027410507202,
+          0.49581876397132874,
+          0.48565083742141724,
+          0.4841146767139435
+        ],
+        "cosine_similarities": [
+          0.5430680513381958,
+          0.5335142612457275,
+          0.5267946720123291,
+          0.5249905586242676,
+          0.5198259949684143,
+          0.5165392160415649,
+          0.5158027410507202,
+          0.49581876397132874,
+          0.48565083742141724,
+          0.4841146767139435
+        ],
+        "faiss_device": "cpu",
+        "document_norms_verified": true,
+        "query_norms_verified": true,
+        "faiss_hits": [
+          {
+            "document_id": "2wiki-v1:42bec240c6e1e35207823333119a8af722cf8d6db31f5f4d7d40bf5730742c43",
+            "rank": 1,
+            "raw_score": 0.5430680513381958,
+            "row_id": 32,
+            "title": "Reign Behind a Curtain"
+          },
+          {
+            "document_id": "2wiki-v1:9422c6ac4e0954af767f8f85bb116d9381ba42c44456064f0a63b87ca20fad67",
+            "rank": 2,
+            "raw_score": 0.5335142612457275,
+            "row_id": 72,
+            "title": "Whoever Slew Auntie Roo?"
+          },
+          {
+            "document_id": "2wiki-v1:49e16fbf0e8035886158450bfd607e6a2185903f13fd83aae982faf1c434a9aa",
+            "rank": 3,
+            "raw_score": 0.5267946720123291,
+            "row_id": 36,
+            "title": "The Fabulous Baker Boys (Motion Picture Soundtrack)"
+          },
+          {
+            "document_id": "2wiki-v1:3a9f8e2028a1eb81cdd44264aecd639b6eaebe9d0cad4501cc37255462cdbd70",
+            "rank": 4,
+            "raw_score": 0.5249905586242676,
+            "row_id": 26,
+            "title": "Jag Mundhra"
+          },
+          {
+            "document_id": "2wiki-v1:a1febcd489022464845d635c152557ac4d40b6256da46b209e1b90c66d45be29",
+            "rank": 5,
+            "raw_score": 0.5198259949684143,
+            "row_id": 77,
+            "title": "A Five Star Life"
+          },
+          {
+            "document_id": "2wiki-v1:310ce41175a9bc32f3d4cbbcd88e544926eb5c4eccc248b1a9fc5d11505c88bc",
+            "rank": 6,
+            "raw_score": 0.5165392160415649,
+            "row_id": 21,
+            "title": "Paul Weitz (filmmaker)"
+          },
+          {
+            "document_id": "2wiki-v1:30c33d3506d35dc8c006631210ed324018148c5b4eb3c66f50d464159943d544",
+            "rank": 7,
+            "raw_score": 0.5158027410507202,
+            "row_id": 20,
+            "title": "Barney's Version (film)"
+          },
+          {
+            "document_id": "2wiki-v1:f5cf1d3c98c01d30af7cca891e43f7256ddb4948298d7f49e361399d344689c8",
+            "rank": 8,
+            "raw_score": 0.49581876397132874,
+            "row_id": 119,
+            "title": "Say One for Me"
+          },
+          {
+            "document_id": "2wiki-v1:1bcc99902ade617610d749b2c29ad3894791fe249152f0ad70e9101ea9e7e111",
+            "rank": 9,
+            "raw_score": 0.48565083742141724,
+            "row_id": 13,
+            "title": "Clio Barnard"
+          },
+          {
+            "document_id": "2wiki-v1:bdf18f8e810f6d2bd2f930dbbd03b55cb64bdecfae21a349daf5a15a3f53bcbf",
+            "rank": 10,
+            "raw_score": 0.4841146767139435,
+            "row_id": 93,
+            "title": "Shuva (film)"
+          }
+        ],
+        "missing_rows": [],
+        "cosine_validation": {
+          "comparisons": [
+            {
+              "absolute_error": 6.397818097525487e-08,
+              "faiss_raw_score": 0.5430680513381958,
+              "numpy_float64_cosine": 0.5430681153163768,
+              "row_id": 32
+            },
+            {
+              "absolute_error": 1.47558089858002e-07,
+              "faiss_raw_score": 0.5335142612457275,
+              "numpy_float64_cosine": 0.5335144088038174,
+              "row_id": 72
+            },
+            {
+              "absolute_error": 6.748282743718192e-08,
+              "faiss_raw_score": 0.5267946720123291,
+              "numpy_float64_cosine": 0.5267947394951565,
+              "row_id": 36
+            },
+            {
+              "absolute_error": 4.860744473589307e-08,
+              "faiss_raw_score": 0.5249905586242676,
+              "numpy_float64_cosine": 0.5249906072317123,
+              "row_id": 26
+            },
+            {
+              "absolute_error": 4.0657444411174026e-08,
+              "faiss_raw_score": 0.5198259949684143,
+              "numpy_float64_cosine": 0.5198260356258587,
+              "row_id": 77
+            },
+            {
+              "absolute_error": 8.08950109121298e-08,
+              "faiss_raw_score": 0.5165392160415649,
+              "numpy_float64_cosine": 0.5165392969365759,
+              "row_id": 21
+            },
+            {
+              "absolute_error": 4.764559147218961e-08,
+              "faiss_raw_score": 0.5158027410507202,
+              "numpy_float64_cosine": 0.5158027886963117,
+              "row_id": 20
+            },
+            {
+              "absolute_error": 7.881133873288704e-08,
+              "faiss_raw_score": 0.49581876397132874,
+              "numpy_float64_cosine": 0.49581884278266747,
+              "row_id": 119
+            },
+            {
+              "absolute_error": 5.3843963843114295e-08,
+              "faiss_raw_score": 0.48565083742141724,
+              "numpy_float64_cosine": 0.4856508912653811,
+              "row_id": 13
+            },
+            {
+              "absolute_error": 1.0895730623294853e-07,
+              "faiss_raw_score": 0.4841146767139435,
+              "numpy_float64_cosine": 0.4841147856712497,
+              "row_id": 93
+            }
+          ],
+          "max_absolute_error": 1.47558089858002e-07,
+          "tie_policy": "do not reorder FAISS; equal cosine ties may have different row ordering",
+          "tolerance": 1e-05,
+          "topk_consistent_within_tolerance": [
+            true
+          ],
+          "topk_exact_row_order_match": [
+            true
+          ],
+          "verified": true
+        },
+        "top1_uncertainty": 0.4569319486618042,
+        "topk_mean_uncertainty": 0.48538802266120906,
+        "score_margin": 0.009553790092468262,
+        "similarity_validity_status": "cosine_verified"
+      }
+    },
+    {
+      "question_id": "f9dcb4a60bda11eba7f7acde48001122",
+      "query": "Where was the director of film Ronnie Rocket born?",
+      "retrieval": {
+        "query": "Where was the director of film Ronnie Rocket born?",
+        "query_embedding_configuration": {
+          "model_id": "Alibaba-NLP/gte-multilingual-base",
+          "model_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "tokenizer_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+          "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+          "pooling": "cls_last_hidden_state",
+          "dimension": 768,
+          "document_max_length": 512,
+          "query_max_length": 512,
+          "normalize": true,
+          "model_dtype": "float32",
+          "output_dtype": "float32",
+          "attention_implementation": "sdpa",
+          "batch_size": 8,
+          "seed": 43,
+          "device": "cpu",
+          "cpu_threads": 4
+        },
+        "retrieval_occurred": true,
+        "retrieval_mask": true,
+        "missingness_reason": null,
+        "index_scope": "smoke",
+        "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+        "top_k_requested": 10,
+        "top_k_returned": 10,
+        "actual_returned_k": 10,
+        "ordered_document_ids": [
+          "2wiki-v1:1bcc99902ade617610d749b2c29ad3894791fe249152f0ad70e9101ea9e7e111",
+          "2wiki-v1:9422c6ac4e0954af767f8f85bb116d9381ba42c44456064f0a63b87ca20fad67",
+          "2wiki-v1:310ce41175a9bc32f3d4cbbcd88e544926eb5c4eccc248b1a9fc5d11505c88bc",
+          "2wiki-v1:73316eec6545062aed7bd60cc03fb256622906c81720d4f204c827e645bbdf5d",
+          "2wiki-v1:30c33d3506d35dc8c006631210ed324018148c5b4eb3c66f50d464159943d544",
+          "2wiki-v1:46c54a3d4e99f95f8d8d00ed4ec08472ba23b747beaf6c471547fffce1e50b27",
+          "2wiki-v1:742be405200d680d0e8c73c52d0b40c691b73d925efc5f993f8c9c71d1140001",
+          "2wiki-v1:42bec240c6e1e35207823333119a8af722cf8d6db31f5f4d7d40bf5730742c43",
+          "2wiki-v1:664909c0d385096c9ecf468653f8dbbd15559533c04de8c0d3e0895c54ad16fd",
+          "2wiki-v1:3c58844f4f5ab0bc66cc26046bb6e7f05d6a3b5858a61b2ce1c377cb26b754f9"
+        ],
+        "raw_faiss_scores": [
+          0.5226664543151855,
+          0.51751309633255,
+          0.5133711099624634,
+          0.5105965733528137,
+          0.5016491413116455,
+          0.49703967571258545,
+          0.48941314220428467,
+          0.48616352677345276,
+          0.486024409532547,
+          0.485701322555542
+        ],
+        "cosine_similarities": [
+          0.5226664543151855,
+          0.51751309633255,
+          0.5133711099624634,
+          0.5105965733528137,
+          0.5016491413116455,
+          0.49703967571258545,
+          0.48941314220428467,
+          0.48616352677345276,
+          0.486024409532547,
+          0.485701322555542
+        ],
+        "faiss_device": "cpu",
+        "document_norms_verified": true,
+        "query_norms_verified": true,
+        "faiss_hits": [
+          {
+            "document_id": "2wiki-v1:1bcc99902ade617610d749b2c29ad3894791fe249152f0ad70e9101ea9e7e111",
+            "rank": 1,
+            "raw_score": 0.5226664543151855,
+            "row_id": 13,
+            "title": "Clio Barnard"
+          },
+          {
+            "document_id": "2wiki-v1:9422c6ac4e0954af767f8f85bb116d9381ba42c44456064f0a63b87ca20fad67",
+            "rank": 2,
+            "raw_score": 0.51751309633255,
+            "row_id": 72,
+            "title": "Whoever Slew Auntie Roo?"
+          },
+          {
+            "document_id": "2wiki-v1:310ce41175a9bc32f3d4cbbcd88e544926eb5c4eccc248b1a9fc5d11505c88bc",
+            "rank": 3,
+            "raw_score": 0.5133711099624634,
+            "row_id": 21,
+            "title": "Paul Weitz (filmmaker)"
+          },
+          {
+            "document_id": "2wiki-v1:73316eec6545062aed7bd60cc03fb256622906c81720d4f204c827e645bbdf5d",
+            "rank": 4,
+            "raw_score": 0.5105965733528137,
+            "row_id": 59,
+            "title": "The Pianist (2002 film)"
+          },
+          {
+            "document_id": "2wiki-v1:30c33d3506d35dc8c006631210ed324018148c5b4eb3c66f50d464159943d544",
+            "rank": 5,
+            "raw_score": 0.5016491413116455,
+            "row_id": 20,
+            "title": "Barney's Version (film)"
+          },
+          {
+            "document_id": "2wiki-v1:46c54a3d4e99f95f8d8d00ed4ec08472ba23b747beaf6c471547fffce1e50b27",
+            "rank": 6,
+            "raw_score": 0.49703967571258545,
+            "row_id": 34,
+            "title": "Rusty Saves a Life"
+          },
+          {
+            "document_id": "2wiki-v1:742be405200d680d0e8c73c52d0b40c691b73d925efc5f993f8c9c71d1140001",
+            "rank": 7,
+            "raw_score": 0.48941314220428467,
+            "row_id": 60,
+            "title": "Puppet Master: The Littlest Reich"
+          },
+          {
+            "document_id": "2wiki-v1:42bec240c6e1e35207823333119a8af722cf8d6db31f5f4d7d40bf5730742c43",
+            "rank": 8,
+            "raw_score": 0.48616352677345276,
+            "row_id": 32,
+            "title": "Reign Behind a Curtain"
+          },
+          {
+            "document_id": "2wiki-v1:664909c0d385096c9ecf468653f8dbbd15559533c04de8c0d3e0895c54ad16fd",
+            "rank": 9,
+            "raw_score": 0.486024409532547,
+            "row_id": 45,
+            "title": "Jean-Jacques Beineix"
+          },
+          {
+            "document_id": "2wiki-v1:3c58844f4f5ab0bc66cc26046bb6e7f05d6a3b5858a61b2ce1c377cb26b754f9",
+            "rank": 10,
+            "raw_score": 0.485701322555542,
+            "row_id": 27,
+            "title": "The Black Arrow (film)"
+          }
+        ],
+        "missing_rows": [],
+        "cosine_validation": {
+          "comparisons": [
+            {
+              "absolute_error": 4.904922723536487e-08,
+              "faiss_raw_score": 0.5226664543151855,
+              "numpy_float64_cosine": 0.5226664052659583,
+              "row_id": 13
+            },
+            {
+              "absolute_error": 8.05564182027041e-08,
+              "faiss_raw_score": 0.51751309633255,
+              "numpy_float64_cosine": 0.5175131768889683,
+              "row_id": 72
+            },
+            {
+              "absolute_error": 6.514421846404161e-08,
+              "faiss_raw_score": 0.5133711099624634,
+              "numpy_float64_cosine": 0.5133711751066818,
+              "row_id": 21
+            },
+            {
+              "absolute_error": 1.5212987314328075e-08,
+              "faiss_raw_score": 0.5105965733528137,
+              "numpy_float64_cosine": 0.510596588565801,
+              "row_id": 59
+            },
+            {
+              "absolute_error": 9.645783394240937e-09,
+              "faiss_raw_score": 0.5016491413116455,
+              "numpy_float64_cosine": 0.5016491509574289,
+              "row_id": 20
+            },
+            {
+              "absolute_error": 4.5184534003261945e-08,
+              "faiss_raw_score": 0.49703967571258545,
+              "numpy_float64_cosine": 0.49703972089711945,
+              "row_id": 34
+            },
+            {
+              "absolute_error": 8.591610034525132e-09,
+              "faiss_raw_score": 0.48941314220428467,
+              "numpy_float64_cosine": 0.48941313361267463,
+              "row_id": 60
+            },
+            {
+              "absolute_error": 2.3676589133714288e-08,
+              "faiss_raw_score": 0.48616352677345276,
+              "numpy_float64_cosine": 0.4861635504500419,
+              "row_id": 32
+            },
+            {
+              "absolute_error": 2.1723208620816337e-08,
+              "faiss_raw_score": 0.486024409532547,
+              "numpy_float64_cosine": 0.4860244312557556,
+              "row_id": 45
+            },
+            {
+              "absolute_error": 1.6628990351374995e-08,
+              "faiss_raw_score": 0.485701322555542,
+              "numpy_float64_cosine": 0.48570130592655164,
+              "row_id": 27
+            }
+          ],
+          "max_absolute_error": 8.05564182027041e-08,
+          "tie_policy": "do not reorder FAISS; equal cosine ties may have different row ordering",
+          "tolerance": 1e-05,
+          "topk_consistent_within_tolerance": [
+            true
+          ],
+          "topk_exact_row_order_match": [
+            true
+          ],
+          "verified": true
+        },
+        "top1_uncertainty": 0.47733354568481445,
+        "topk_mean_uncertainty": 0.498986154794693,
+        "score_margin": 0.005153357982635498,
+        "similarity_validity_status": "cosine_verified"
+      }
+    }
+  ],
+  "index_build_seconds": 0.04246009996859357,
+  "index_manifest": {
+    "batch_size": 8,
+    "build_status": "complete",
+    "builder_version": "2wiki-local-flatip-v1",
+    "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+    "corpus_checksum": "2543427d7c42ac82a88b6e8b4b2ff0063495a17dfefa72013e3f6cdacaf38b72",
+    "corpus_manifest_hash": "7b4271ded005a7d0ab15390a5ac46c514378b93050be4604d529e72300aa91a3",
+    "device": "cpu",
+    "document_mapping_checksum": "c760edca4633abbf72dc4fa3b10eb801c7eee6314a4a7004e331436fce507395",
+    "document_max_length": 512,
+    "embedding_dimension": 768,
+    "embedding_dtype": "float32",
+    "encoder_config": {
+      "attention_implementation": "sdpa",
+      "batch_size": 8,
+      "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+      "cpu_threads": 4,
+      "device": "cpu",
+      "dimension": 768,
+      "document_max_length": 512,
+      "model_dtype": "float32",
+      "model_id": "Alibaba-NLP/gte-multilingual-base",
+      "model_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+      "normalize": true,
+      "output_dtype": "float32",
+      "pooling": "cls_last_hidden_state",
+      "query_max_length": 512,
+      "seed": 43,
+      "tokenizer_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062"
+    },
+    "encoder_config_hash": "69ba38882ab9878a0d7e3ac3e62a177670c61a18423dff3f5346fddbd0f2ae86",
+    "faiss_index_type": "IndexFlatIP",
+    "faiss_version": "1.8.0",
+    "file_checksums": {
+      "document_mapping.jsonl": "c760edca4633abbf72dc4fa3b10eb801c7eee6314a4a7004e331436fce507395",
+      "embeddings.npy": "35b99d7a6911bce6cf675ec8b588ddbbbbe36f02b4d4aac6ed9d3c6fcc9cb870",
+      "index.faiss": "a5f262ce3ee8d62d4680d7d2e4acfa14c0c9ae46ff75ae0f487fdceaf5ee75f9",
+      "selected_documents.jsonl": "ce9f31016fd2e9ae8954133bd2eae6065b3527151d05051d7c5a6e3f5bf7da2c"
+    },
+    "file_sizes_bytes": {
+      "document_mapping.jsonl": 13330,
+      "embeddings.npy": 393344,
+      "index.faiss": 393261,
+      "selected_documents.jsonl": 183383
+    },
+    "index_checksum": "a5f262ce3ee8d62d4680d7d2e4acfa14c0c9ae46ff75ae0f487fdceaf5ee75f9",
+    "model_commit_sha": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+    "model_id": "Alibaba-NLP/gte-multilingual-base",
+    "norm_validation": {
+      "count": 128,
+      "finite": true,
+      "norm_max": 1.000000100648358,
+      "norm_min": 0.9999998901192347
+    },
+    "normalization": "L2",
+    "number_of_documents": 128,
+    "pooling": "cls_last_hidden_state",
+    "query_max_length": 512,
+    "random_seed": 43,
+    "research_retrieval_index": false,
+    "schema_version": 1,
+    "scope": "smoke",
+    "selection": {
+      "document_ids": [
+        "2wiki-v1:04826c4ec276fb215272f9428f839378bb089a81ff5757e420d010c8d58e047e",
+        "2wiki-v1:04b3cc5f0ff874b0a643160b4c6baeec9c4b45aef594a23bd58dde7269ec9e0b",
+        "2wiki-v1:06863e48802dba01bc33603bb76eb8143333b9b79c22cc77c3a3d735f60ebe55",
+        "2wiki-v1:086a6150020087f7847e16b5c4d6c8c8bc76a669c8571ec903ed85b46ca90200",
+        "2wiki-v1:0967f1ac8b35e2f498905f8a32773165f27b26f2e23b5b219988bd5fee933b89",
+        "2wiki-v1:0e202185c644e90ef2b7817caa41770e9e5b074513a5f3b2b0b8ec73f008a9e0",
+        "2wiki-v1:0fb4ddaf2a0df14d4cdffb1c914efa6fff74af29b0df972b8bd16306a0dd1f5b",
+        "2wiki-v1:11ce14cf83d4378f9ef583815d5f87b370483633741cad60a47ff80a8ae28d3a",
+        "2wiki-v1:1294c3e0a556de3cd26d3666581e784a95cf7fb4726967844f0285d4606488ee",
+        "2wiki-v1:157a67c7ed1c67fa6bc6e3d06d4eca103b34191fc0dcf50d43ca84b08618898a",
+        "2wiki-v1:188531d3a6509411cf1995c8652ba9c443c079f5d88a0b89a8c2813a4f157bfe",
+        "2wiki-v1:19415439a1105c16868b3881036c41dea4d75985c8e2d8bedda3fa9613d5e9dc",
+        "2wiki-v1:196b8a3a29fcefa8bfb77f0da45c3578c78715122844929c7c0e617eacc96bea",
+        "2wiki-v1:1bcc99902ade617610d749b2c29ad3894791fe249152f0ad70e9101ea9e7e111",
+        "2wiki-v1:1deae19434c62ad31ef00070e40cad4acec86ec84ac799aa87c7eae92ded5e3a",
+        "2wiki-v1:27abd1b97c9129e8965b04e9a41b5972eabf63baa577789dc2b5f2898e42d092",
+        "2wiki-v1:297e8eea637eddbc010bea1299e06b18cf266a7e33fcf20fa9a29a7c1ac291e3",
+        "2wiki-v1:2a94028dbd1fd57ca94909f059242fcd3e761bfa300f397a156bfc34a40e58e4",
+        "2wiki-v1:2ed56e21f49935e6d40afc22071c45075b94c8cbe9c51644477d2052dc13ea80",
+        "2wiki-v1:30a37c1ab5f668a5c4b7ca0f7af33d1f0c8ea0a0c3746a4173880d754e41a7f0",
+        "2wiki-v1:30c33d3506d35dc8c006631210ed324018148c5b4eb3c66f50d464159943d544",
+        "2wiki-v1:310ce41175a9bc32f3d4cbbcd88e544926eb5c4eccc248b1a9fc5d11505c88bc",
+        "2wiki-v1:34b4dea507e914ff9d0783c76c1fb44d54757d0b112b9ac6b5f7870e00e7055c",
+        "2wiki-v1:3537ef4df0bba81a55efef3a74ae0933fc31ade54c05beb46421e5c8e872a4ba",
+        "2wiki-v1:37498d2f8f0e035189eb5f7baa8166a6aee4e8dd0bc0e2218b96138697618c0f",
+        "2wiki-v1:3a6d83ddc3995bb83bf2588b4fc5940a2ab4a9c0841ba73860f49b06a9cbb58a",
+        "2wiki-v1:3a9f8e2028a1eb81cdd44264aecd639b6eaebe9d0cad4501cc37255462cdbd70",
+        "2wiki-v1:3c58844f4f5ab0bc66cc26046bb6e7f05d6a3b5858a61b2ce1c377cb26b754f9",
+        "2wiki-v1:3f814d95b6c1eef8838118bd92bb0010fb2bf77b1921e49295deb5d724d7e372",
+        "2wiki-v1:41b40369a0b08435f76a8ffb0d097c39d7863e1bf49206db12320ef8af8044e9",
+        "2wiki-v1:424510438fd04bef41ef68d959842edcb3dd1ca4022bbbb91967638ffc684700",
+        "2wiki-v1:42b68d291c96fb49d9b51c0174b3edbe459252bb11a6d4842344bd4d33049ce1",
+        "2wiki-v1:42bec240c6e1e35207823333119a8af722cf8d6db31f5f4d7d40bf5730742c43",
+        "2wiki-v1:44b3e663913f1257a208a96c199a15fba87ef5200765453c954e5eadb555019c",
+        "2wiki-v1:46c54a3d4e99f95f8d8d00ed4ec08472ba23b747beaf6c471547fffce1e50b27",
+        "2wiki-v1:46e01d20475da4461873ec4537c9510d6c11dc51f496deeb8cc1682456f84335",
+        "2wiki-v1:49e16fbf0e8035886158450bfd607e6a2185903f13fd83aae982faf1c434a9aa",
+        "2wiki-v1:53121ac7f2f36b759ad14ae188731ac0b788f2ac08600736190cde98c057d8f4",
+        "2wiki-v1:55ae9509ee6381a50412c5b0287d660c7002a423d73528faba302aed8caaac61",
+        "2wiki-v1:59b2ed1bd1b82fdef599eccc6d99b5b3e306e538cbda155e027b28bd8789bba6",
+        "2wiki-v1:5a519479666b5acfc4a89e276ae12600e91df52b4391c9a4134240238ae8824a",
+        "2wiki-v1:5ae1f5c9927f331e89b34447a66e5f262a84aee80067224ffd7dd2351be3d6db",
+        "2wiki-v1:632600039751b0131e9207b67c143db19387360dcab98a30c497c1f08846c6a7",
+        "2wiki-v1:636ed370282bf27486e5d9e27558d3d7a3784e0d9db9ac797af872c2b4fce490",
+        "2wiki-v1:651bc19cde25ff7d51f630aab8536bf9e7b1d06d9e255e1defb125d49c64d69d",
+        "2wiki-v1:664909c0d385096c9ecf468653f8dbbd15559533c04de8c0d3e0895c54ad16fd",
+        "2wiki-v1:670ef6c27e6e61f58c1815c9acec65bcae661121b8e8a180d3f6ca9f1dab2527",
+        "2wiki-v1:67ab2fa85d379f8f7c8249407916c72c83bb6ad917aa0eb2b4210ee72cde7398",
+        "2wiki-v1:6821f263cc5e05451e8b40e6e8111ab7d1b88f70100bbd2a9b3392eb548670db",
+        "2wiki-v1:68c53d64afd58dc2aa41efa92d8e412ebc296f6cc99be9845717266133c859dc",
+        "2wiki-v1:693086dea1c92509c4b2b80f6ce498094587ab012fba6286d2c9ace19a222182",
+        "2wiki-v1:6b33db1af9187829449d5200dc21109a024c19b73d5e7848789839ae471db893",
+        "2wiki-v1:6d69ac8d972500592bc283591c611f0e929daaf5a526d1af9ab2962af1f93c36",
+        "2wiki-v1:6e1de0fcda6750f242903d7d52feb6ee236d7a88bebb33303d1ba93cbc458dd1",
+        "2wiki-v1:6f0b0ad518f258edcc22dd623adee4a28eaa4681a63539ab6ca6aa132ad3d6c8",
+        "2wiki-v1:6ffcc14e74a38192a464c616baf4ebfd4d27b32cb22b91708532f4e9e5c83a48",
+        "2wiki-v1:71e5261552a610dd7287058db608e0e2ccf52cd27f5e296d232778cb52074a70",
+        "2wiki-v1:72214c2f4b3d2a47103713f5109015448ef7ac1a7f36d148ef08664cfa7feae4",
+        "2wiki-v1:732e3b2d366e69bc25d354e1e142748e705535729b0e96b1bab2d884d17c831b",
+        "2wiki-v1:73316eec6545062aed7bd60cc03fb256622906c81720d4f204c827e645bbdf5d",
+        "2wiki-v1:742be405200d680d0e8c73c52d0b40c691b73d925efc5f993f8c9c71d1140001",
+        "2wiki-v1:7604e461884460541e1c0925103e6881715eafa1cb1987f62e5daea99e320de2",
+        "2wiki-v1:79dcc4ae1f636c71789ef13e155e92974c00b01408f0207a3f65c144947f29aa",
+        "2wiki-v1:83416a055fe8105163ee66608c898567f2932b38a751f875e04ccd9bdc9a32cb",
+        "2wiki-v1:84bda9233de9fda1acae52efa79ca0eeabb4729b7c991f0f1e749de8b6c46cf7",
+        "2wiki-v1:85e67fa266b5bd6521ddd51d5fb99af998696a0566032e65d902df557cd3c9ba",
+        "2wiki-v1:88173353bf48133f72ad09e6dbf072e534ccd964b2b189cb6cf6a36fe8b6bd75",
+        "2wiki-v1:8f1c382e8b79ea9dd88e2b9c7e9f9140edfeb7b83b09c7700d214833b964e65e",
+        "2wiki-v1:8f8bbc471da068063b1cf6f371092794d915d0268c95164bb56aa77fc417ec1b",
+        "2wiki-v1:90ab36a38c9ced50a611e778a10f9b6d6dc8df72d791846800315e229a6b81ef",
+        "2wiki-v1:910765fcf1a42183a200c1ad9849624c962ed0090f8b623de7b885a0e318d722",
+        "2wiki-v1:9265bacfb0603b56f65be2b655feba463bfd36c43e55a3b4cd8b86ea019a7ea1",
+        "2wiki-v1:9422c6ac4e0954af767f8f85bb116d9381ba42c44456064f0a63b87ca20fad67",
+        "2wiki-v1:97b39fa0078b9246f0d3b2ab9558c6529ca6f797e7ad9a68058bd9050c4d62e0",
+        "2wiki-v1:97f268fd4fecfbdadc11dec43b93f2a8ef83bfbbe7bdf2f5eb06aad830909946",
+        "2wiki-v1:980bce6cd04a5f5fdfe41b55602088f505ec69812b820aafe106f61abfc4e0d8",
+        "2wiki-v1:9d3965e381ae042ce10100e612ad5241779849f00fae5986d913e5f8048cc30b",
+        "2wiki-v1:a1febcd489022464845d635c152557ac4d40b6256da46b209e1b90c66d45be29",
+        "2wiki-v1:a5e0acf3c53a34d377077f2106bfd3b0ff8009238c9993dd964a46ba6821c7ac",
+        "2wiki-v1:a6c7b960490fc7b134ee0a8fa6de198589cd52bac74f22e93ed0a2f235089006",
+        "2wiki-v1:a7850967c7b8766257f8dd983db0af3800d8d806fdd4b6bf38a5b41aa5a048d4",
+        "2wiki-v1:a960035c7b8d088cbd46913c200f1bff6c679e010c4b073bbc360166781ebe05",
+        "2wiki-v1:a9f0dda8f6d0fe47f9d24dc1dcf26d969081d3756a817e7b35f7587b0df09a70",
+        "2wiki-v1:aad4fb65b382d49cc5277b849a84bb3641f4256864dfeca701db0cc8ca2eb3bb",
+        "2wiki-v1:ab0c337582885235adc45d6fd7c969c4612e5261a48245f97d0df7a6050b38bf",
+        "2wiki-v1:ac99ddfda15f51432bac3cc08881f4b04ba83ef6e68ea711a42fbd7670db0e40",
+        "2wiki-v1:ac9f0ac1739cd13d7913461d3501882a35c1a87402b644a8ed176c1e88251541",
+        "2wiki-v1:b6af8bea4b3d4e9bd27759621472e2105b6bc7a29f816f81258f8381ea239751",
+        "2wiki-v1:b98b6398223c6312941564c42b98991550b79b3dfed32db3a9a16d17b50b921f",
+        "2wiki-v1:bac6e113f37611a0235ca46b09118c14afc36e837d03bee891a25d20ce438bdf",
+        "2wiki-v1:bac877b73b076a0c00f819dc499a69cd636c169dd43720464e777a4866419642",
+        "2wiki-v1:bbefcc77e4a74d068bb678314f289bed2d5fc781bb7f11217d217faf007a34b1",
+        "2wiki-v1:bc980b50a84a6df3baeeaed30c74cedf50095abe35942af6afc7ddf94d029e36",
+        "2wiki-v1:bdf18f8e810f6d2bd2f930dbbd03b55cb64bdecfae21a349daf5a15a3f53bcbf",
+        "2wiki-v1:be9a02f2923b4a09482b4e69feb240af73f25cc56fe8746c7b4f366c80483e1a",
+        "2wiki-v1:c01a9a5f043f13710f16c9ddff533699810ceb02a0e36f7b706303629b16bbd1",
+        "2wiki-v1:c0506e9686f494033fa714805c4f106c1f9579376f680a9a4939e833f62635ca",
+        "2wiki-v1:c073a969ec7fc2ff03b419bdc5208690d9751d5b504c6ab7f5d76426af965aa2",
+        "2wiki-v1:c2ba304138f4d91836d92dd3c856ca190520619f72dc8aa7027ecb786a0e420f",
+        "2wiki-v1:c50f399b48ae00facaa34c7f415bf5438c3025d2487020b98212f37f05852910",
+        "2wiki-v1:c83e00d6f2442e632e8b07a6e275ceb68b72f61adb85446f29dc9de9ba06e80e",
+        "2wiki-v1:cb4eeee9fb803d5002aa3a5f6758301b93e436c5bf29161d61520c840b7f8b33",
+        "2wiki-v1:cbdae4a74a68027717cb2d4d7d08837204b9ee04dbfe5b13790c1ba93678cbb5",
+        "2wiki-v1:cec89a163f8df1b2935b566388570ad86ec7f2dd505debf6d7053f0f90451eec",
+        "2wiki-v1:d00a770b6212a41f63504535d59ed1739609007d8ebe014022444c3000191b6c",
+        "2wiki-v1:d2933be31b14dc0404235d91dbffcaac4082b3a0c573e91aac0df543ae358425",
+        "2wiki-v1:d2fc4e306a53e466965b7459a2a0205c9b18414659da1089668d28851d7e8089",
+        "2wiki-v1:dfc85d9df3a25317841836f45459d518b7e6b8df715dff0e196c741f230c4cac",
+        "2wiki-v1:e0aee57736df8e26b0da93298855d53aa86a34587c1666bd7e9a37925c4798e1",
+        "2wiki-v1:e3275d527f8bfad57095cdcd9e0e8dfb88f42d9bb20fadcc44f06f6370d7b5cf",
+        "2wiki-v1:e348c15803d4eaf0cef51d0a845120fce7877a99289e409998b6a76fbd2b1bd7",
+        "2wiki-v1:e3a2acde4bbc7a8db237676f4be8d5fafa6b8e25ca9caa176023ea0063d962c9",
+        "2wiki-v1:e89ec58d6e98d36e2d477b55d9a8f2baaae54b47178ba1965342b90538ecd945",
+        "2wiki-v1:ea3814e0cc54c46d85fec3d78b4817bb6f511d01248dae54299a8f00dd21a310",
+        "2wiki-v1:ebd7eb56c2f627aca04aede79c9d90107404fed36840f51dd0d936e72ce51676",
+        "2wiki-v1:ed25413b8e2e7499a946aead3229634c4b3058ec84fac4eb935f9535d06d8152",
+        "2wiki-v1:f167a39e7dd60ac0fe30302c11771c85bd9afda227fd98222108f6f8f8e569a1",
+        "2wiki-v1:f2fd001729cd0b5d040d7aaedea9d8cbb4730622924622b61780b54dfac37a33",
+        "2wiki-v1:f348128be17dd18ef96239eec0b4f035877cd120ed77c80a2abca0b19d2ddba1",
+        "2wiki-v1:f5cf1d3c98c01d30af7cca891e43f7256ddb4948298d7f49e361399d344689c8",
+        "2wiki-v1:f5f8b889c33e5db9115b289ed2a196405c9ff689cfa1bddbb0d6726137cf0bb6",
+        "2wiki-v1:f91f25cd26f7c2a122bcbcc87c5dbab15744e0ba87208444aa2312517b3de669",
+        "2wiki-v1:fab536da64452a02374ff22f27acc8396731cb5bc76c463f6315639e9ab7ff36",
+        "2wiki-v1:fac356a3e0b97bb3204830ccd7fb91749db8768b01ab0af35c62a21ab5e86ccc",
+        "2wiki-v1:facd510dc1604e60eb4f3915fb75f00af8347efaebf1a27381708eea5acb7825",
+        "2wiki-v1:fb9fd0812b9528c4484551680b93d27869e2f9a42e85596bd9e4694461d69206",
+        "2wiki-v1:fe0b65c1fe7caf532c0cb52b7a1d51b9527c41f1333656193f7f54ba5e96ccb1",
+        "2wiki-v1:fff95cc47c909413604f407fe8833dbaffbe87647a0f0f840a1e9f61d5e3004e"
+      ],
+      "limit": 128,
+      "seed": 43,
+      "selection_hash": "ff05fe65276cb06d13374af1763068141ec7d4379f8b0a107866dcb04cb07f19",
+      "strategy": "lowest_sha256_of_seed_colon_document_id"
+    },
+    "tokenizer_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+    "torch_version": "2.5.1",
+    "transformers_version": "4.50.3"
+  },
+  "full_corpus_token_audit": {
+    "mode": "tokenization_only_no_model_forward",
+    "document_count": 384857,
+    "truncated_document_count": 5492,
+    "truncation_rate": 0.014270235438097786,
+    "untruncated_token_total": 40956714,
+    "untruncated_token_mean": 106.42060297720971,
+    "quantiles": {
+      "0": 7.0,
+      "50": 72.0,
+      "90": 221.0,
+      "95": 317.0,
+      "99": 570.0,
+      "100": 4708.0
+    },
+    "padded_batch_linear_work": 105710134,
+    "padded_batch_quadratic_work": 35711999228,
+    "seconds": 24.27274819999002
+  },
+  "full_corpus_estimates": {
+    "full_document_count": 384857,
+    "full_embedding_executed": false,
+    "fp32_vector_bytes": 1182280704,
+    "embedding_npy_bytes_estimate": 1182280832,
+    "flatip_index_bytes_estimate": 1182280749,
+    "mapping_bytes_exact_format_estimate": 41453446,
+    "one_extra_vector_checkpoint_bytes": 1182280704,
+    "count_scaled_seconds_reference": 116591.67316874993,
+    "gpu_encoding_seconds": null,
+    "gpu_estimate_note": "No GPU time can be measured with installed CPU-only PyTorch; requires future CUDA probe, not a CPU-to-GPU speed extrapolation.",
+    "token_work_scaled_inference_seconds_linear": 129796.33552185586,
+    "token_work_scaled_inference_seconds_quadratic": 150027.39999553992,
+    "token_work_estimate_note": "Two illustrative scaling models (token-linear and attention-quadratic); not confidence bounds. Add measured full tokenization/I/O time; future thermal/load changes may dominate."
+  },
+  "hardware": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "torch_cuda_available": false,
+    "torch_threads": 4,
+    "process_peak_ram_bytes": 2264973312,
+    "cuda_peak_allocated_bytes": null,
+    "cuda_peak_reserved_bytes": null,
+    "nvidia_smi_snapshot": {
+      "gpu": "NVIDIA GeForce RTX 4070",
+      "memory_total_mib": 12282,
+      "memory_used_mib": 2560,
+      "driver": "591.86",
+      "note": "System snapshot, not GTE VRAM usage."
+    }
+  },
+  "model_loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [
+      "classifier.bias",
+      "classifier.weight"
+    ],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "elapsed_after_selection_seconds": 72.43592129996978,
+  "raw_report_sha256": "05d6f8d1a019d3e58c1a15c1598bf974e466ea7b6e5d4112dcdee1f3743f3b76",
+  "offline_tests": {
+    "legacy_regression_passed": 198,
+    "phase3a_passed": 27,
+    "total_passed": 225,
+    "process_isolation": "Legacy regression and new native encoder tests run in separate pytest processes; no model downloads or LLM calls in offline tests."
+  }
+}

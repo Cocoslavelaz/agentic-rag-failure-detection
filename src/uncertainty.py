@@ -53,3 +53,30 @@ def generated_logprobs(raw):
     if not isinstance(records, list) or any(not isinstance(r, dict) or "logprob" not in r or "token" not in r for r in records):
         return None, "returned_unverified"
     return [r["logprob"] for r in records], "available"
+
+
+def logprobs_coverage(raw, content=None):
+    values, availability = generated_logprobs(raw)
+    count = len(values) if values is not None else None
+    evaluated = raw.get("eval_count")
+    ratio = count/evaluated if count is not None and type(evaluated) is int and evaluated > 0 else None
+    if values is None:
+        status = availability
+    elif type(evaluated) is not int or evaluated < 0:
+        status = "unknown"
+    elif evaluated == 0:
+        status = "empty" if count == 0 else "inconsistent"
+    else:
+        status = "complete" if count == evaluated else "partial" if count < evaluated else "inconsistent"
+    records = raw.get("logprobs")
+    if isinstance(records, dict):
+        records = records.get("content")
+    matches = None
+    if values is not None and content is not None:
+        records = [r.model_dump() if hasattr(r, "model_dump") else r for r in records]
+        if all(isinstance(r.get("token"), str) for r in records):
+            matches = "".join(r["token"] for r in records) == content
+    return {"logprobs_count": count, "eval_count": evaluated, "coverage_ratio": ratio,
+            "coverage_status": status, "logprob_text_matches_content": matches,
+            "missing_logprobs_count": evaluated-count if status == "partial" else None,
+            "done_reason": raw.get("done_reason")}

@@ -1,0 +1,17 @@
+{
+  "dataset": "2wikimultihopqa",
+  "version": "2021-04-07 sentence segmentation corrected release",
+  "source_repository": "https://github.com/Alab-NII/2wikimultihop",
+  "source_readme": "https://raw.githubusercontent.com/Alab-NII/2wikimultihop/main/README.md",
+  "source_url": "https://www.dropbox.com/s/ms2m13252h6xubs/data_ids_april7.zip?dl=1",
+  "original_filename": "data_ids_april7.zip",
+  "download_date": "2026-10-10 Asia/Taipei (2026-10-09 UTC)",
+  "size_bytes": 258968175,
+  "sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+  "local_path": "data/2wiki/official_20210407/data_ids_april7.zip",
+  "repository_license": "Apache-2.0, Copyright 2020 Xanh Ho",
+  "license_url": "https://github.com/Alab-NII/2wikimultihop/blob/main/LICENSE",
+  "archive_license_note": "Archive contains test.json, dev.json, train.json and id_aliases.json only; no separate dataset license or NOTICE. Repository license is recorded without asserting it relicenses third-party Wikipedia text.",
+  "citation": "Ho et al. (2020), Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps, COLING, pp. 6609-6625",
+  "identity_basis": "Official author README April 7, 2021 update links directly to this archive; HTTP 200 and downloaded byte count match Content-Length. SHA256 is locally calculated, not an author-published checksum."
+}

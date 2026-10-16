@@ -16,3 +16,6 @@ __pycache__/
 adhoc.py
 .envrc
 .python-version
+data/2wiki/
+artifacts/2wiki/
+models/gte-multilingual-base/

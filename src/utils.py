@@ -3,6 +3,7 @@ import torch
 import json
 import torch.nn.functional as F
 import argparse
+import os
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from langchain_core.prompts.chat import ChatPromptTemplate, HumanMessagePromptTemplate, MessagesPlaceholder, SystemMessagePromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -72,6 +73,8 @@ class RetrieveTopChunk():
             search = getattr(self.retrieval_model, "last_search", None) or {}
             scores = [float(score) for score in top_doc[0].values()]
             verified = search.get("document_norms_verified") is True and search.get("query_norms_verified") is True
+            if search.get("faiss_device") == "cpu":
+                verified = verified and search.get("cosine_validation", {}).get("status") == "verified"
             hits = search.get("faiss_hits", [[]])[0]
             if any(not h["valid_index_position"] for h in hits):
                 verified = False
@@ -123,41 +126,12 @@ class RetrieveTopChunkMedcpt():
         return list_docs, list_doc_ids
 
 def load_jsonl(file_path):
-    data = []
-    with open(file_path, 'r') as f:
-        for line in f:
-            try:
-                json_object = json.loads(line)
-                data.append(json_object)
-            except json.JSONDecodeError:
-                print(f"Skipping invalid JSON: {line.strip()}")
-    return data
+    from src.dataset_io import load_dataset as read_local
+    return read_local("local", file_path)
 
-def load_dataset(name):
-    if name == "nq":
-        file_path = '/scratch2/f0072r1/rs_rl/test_dataset/nq-dev-kilt.jsonl'
-        data = load_jsonl(file_path)
-        return data
-
-    if name == "hotpotqa":
-        file_path = '/scratch2/f0072r1/rs_rl/test_dataset/hotpotqa-dev-kilt.jsonl'
-        data = load_jsonl(file_path)
-        return data
-    
-    if name == "triviaqa":
-        file_path = '/scratch2/f0072r1/rs_rl/test_dataset/triviaqa-dev-kilt.jsonl'
-        data = load_jsonl(file_path)
-        return data
-
-    if name == "2wiki":
-        file_path = "/scratch2/f0072r1/rs_rl/test_dataset/2WikiMultihopQA.jsonl"
-        data = load_jsonl(file_path)
-        return data
-
-    if name == "fever":
-        file_path = "/scratch2/f0072r1/rs_rl/test_dataset/fever-dev-kilt.jsonl"
-        data = load_jsonl(file_path)
-        return data
+def load_dataset(name, path=None, *, split=None, provenance=None, evidence_policy='strict'):
+    from src.datasets import load_dataset as read_local
+    return read_local(name, path, split=split, provenance=provenance, evidence_policy=evidence_policy)
 
 class GenericDoc(NamedTuple):
     doc_id: str
@@ -168,17 +142,18 @@ class GenericDoc(NamedTuple):
     def default_text(self):
         return self.a
 
-def load_corpus(name="dpr"):
-    import ir_datasets
-    from ir_datasets.util import GzipExtract, LocalDownload
-    from ir_datasets.formats import TsvDocs
+def load_corpus(name="dpr", store_path=None):
     if name == "dpr":
-        nq_dataset = ir_datasets.load("dpr-w100/natural-questions/dev")
-        # df = pd.DataFrame(nq_dataset.queries_iter())
-        # nq_q_dict = {k: {"q": q, "a": a} for k, q, a in zip(df['query_id'].to_list(), df['text'].to_list(), df['answers'].to_list())}
-        corpus = nq_dataset.docs_store()
+        from src.assets import open_dpr_corpus
+        corpus = open_dpr_corpus(store_path or os.getenv("DPR_CORPUS_STORE"))
     else:
-        DL_DOCS = GzipExtract(LocalDownload("/scratch2/f0072r1/rs_rl/pubmed.tsv.gz"))
+        import ir_datasets
+        from ir_datasets.util import GzipExtract, LocalDownload
+        from ir_datasets.formats import TsvDocs
+        path = os.getenv("PUBMED_CORPUS_PATH")
+        if not path or not os.path.isfile(path):
+            raise FileNotFoundError("Set PUBMED_CORPUS_PATH to an existing local corpus")
+        DL_DOCS = GzipExtract(LocalDownload(path))
         tmp = TsvDocs(DL_DOCS, doc_cls=GenericDoc, skip_first_line=True)
         corpus = tmp.docs_store()
     return corpus
@@ -264,6 +239,14 @@ def parse_args():
     parser.add_argument("--start_index", type=int, default=0)
     parser.add_argument("--end_index", type=int, default=1000000)
     parser.add_argument('--gpus', nargs='+', type=int)
+    parser.add_argument('--dataset-path', help='Local KILT/HotpotQA JSONL, JSON or Arrow IPC file')
+    parser.add_argument('--dataset-format', choices=['kilt', 'hotpotqa'], default='kilt')
+    parser.add_argument('--faiss-device', choices=['cpu', 'gpu'], default=os.getenv('FAISS_DEVICE', 'cpu'))
+    parser.add_argument('--index-root', default=os.getenv('INDEX_ROOT', 'save_embs/gte-ml-base'))
+    parser.add_argument('--index-prefix', default=os.getenv('INDEX_PREFIX', 'dpr100'))
+    parser.add_argument('--embedding-path', default=os.getenv('EMBEDDING_MODEL_PATH', 'hf/gte-multilingual-base'))
+    parser.add_argument('--embedding-device', default=os.getenv('EMBEDDING_DEVICE', 'cpu'))
+    parser.add_argument('--corpus-store', default=os.getenv('DPR_CORPUS_STORE'))
     args=parser.parse_args()
 
     return args
